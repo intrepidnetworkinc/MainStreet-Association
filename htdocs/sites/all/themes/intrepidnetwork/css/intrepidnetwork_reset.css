@@ -1,0 +1,13 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* Bootstrap reset */
+
+[class*="span"] {
+  min-height: 0;
+}
+
+
+img {
+  height: auto !important;
+}
