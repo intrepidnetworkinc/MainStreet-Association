@@ -1,5 +1,7 @@
 <?php
 
+define('RAXSDK_CACERTPEM', 'C:\xampp\htdocs\obma\htdocs\sites\all\modules\cloud_files\cacert.pem');
+
 /**
  * Implements hook_menu().
  */
