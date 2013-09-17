@@ -21,5 +21,3 @@ stylesheets[all][] = css/intrepidnetwork_style.css
 settings[toggle_name] = 0
 settings[toggle_search] = 1
 
-scripts[] = js/waypoints.js
-scripts[] = js/interactive.js
