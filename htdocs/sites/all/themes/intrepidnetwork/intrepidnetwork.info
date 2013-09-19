@@ -21,3 +21,5 @@ stylesheets[all][] = css/intrepidnetwork_style.css
 settings[toggle_name] = 0
 settings[toggle_search] = 1
 
+scripts[] = js/jquery.styleWords.min.js
+scripts[] = js/intrepidnetwork_style.js

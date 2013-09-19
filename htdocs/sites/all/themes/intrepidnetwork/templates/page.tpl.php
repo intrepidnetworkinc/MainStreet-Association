@@ -49,7 +49,7 @@
     <?php print render($page['header']); ?>
   </header> <!-- /#header -->
 
-  <div class="row">
+  <div class="row-fluid">
 
     <?php if (!empty($page['sidebar_first'])): ?>
       <aside class="span3" role="complementary">
@@ -95,7 +95,11 @@
 
 <div id="footer-background">
   <div id="footer-navigation" class="footer-navigation container">
-    <?php print render($page['footer_navigation']); ?>
+    <div class="row-fluid">
+      <div class="span12">
+          <?php print render($page['footer_navigation']); ?>
+      </div>
+    </div>
   </div>
   <div id="legal" class="legal container">
     <?php print render($page['legal']); ?>
