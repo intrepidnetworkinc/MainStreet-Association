@@ -3,9 +3,9 @@
 
 /* Bootstrap reset */
 
-[class*="span"] {
+/*[class*="span"] {
   min-height: 0;
-}
+}*/
 
 img {
   height: auto !important;
@@ -27,10 +27,7 @@ a:hover, a:focus {
 }
 
 @media (min-width:1200px) {
-  .container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
-    width: 1280px;
-  }
-  .row-fluid .region-footer-navigation section.span2 {
-    width: 16.66666666666667%;
+  .navbar-fixed-top nav {
+    position: relative;
   }
 }

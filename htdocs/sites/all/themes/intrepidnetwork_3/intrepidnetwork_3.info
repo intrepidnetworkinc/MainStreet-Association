@@ -15,6 +15,7 @@ regions[footer]         = 'Footer'
 
 ; Stylesheets
 stylesheets[all][] = css/style.css
+stylesheets[all][] = css/reset.css
 stylesheets[all][] = css/ubercart_style.css
 
 ;**********************************
@@ -51,3 +52,13 @@ stylesheets[all][] = css/ubercart_style.css
 settings[toggle_search] = 1
 settings[cdn_bootstrap] = 1
 settings[bootstrap_cdn] = 3.0.0
+
+
+;**********************************
+; Intrepid Network Inc: jQuery Source Files
+;**********************************
+; 
+; ; Scripts
+; 
+scripts[] = js/jquery.styleWords.min.js
+scripts[] = js/intrepidnetwork_style.js
