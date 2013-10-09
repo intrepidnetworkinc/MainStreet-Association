@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Responsive Carousel Jumbotron feature.
+ */
+
+include_once 'responsive_carousel_jumbotron.features.inc';
