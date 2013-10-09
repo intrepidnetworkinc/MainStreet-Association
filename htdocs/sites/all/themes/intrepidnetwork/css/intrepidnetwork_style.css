@@ -175,7 +175,7 @@ h1, h2, h3, h4, h5, h6 {
   top: 113px;
 }
 
-.social-media-channels a {
+.social-media-channels a, .social-media-channels-footer a {
   margin: 0 5px;
   padding: 0 5px;
 }
@@ -246,6 +246,7 @@ section.gold {
   border-right: none;
   margin: 0;
   padding: 0;
+  background: url(../images/footer-horizontal-line.gif) repeat-x center center;
 }
 
 .region-footer-navigation section p {
