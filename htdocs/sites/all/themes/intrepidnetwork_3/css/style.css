@@ -250,9 +250,9 @@ section.blue .more-link a {
   border-bottom: 2px solid #478cc0;
 }
 
-.region-footer section.site-name h3 {
+/*.region-footer section.site-name h3 {
   margin: 0;
-}
+}*/
 
 .region-footer section.col-md-2 {
   float: left;
@@ -321,4 +321,10 @@ footer {
   background: -ms-linear-gradient(top,  rgba(51,105,112,1) 0%,rgba(81,167,179,1) 3%); /* IE10+ */
   background: linear-gradient(to bottom,  rgba(51,105,112,1) 0%,rgba(81,167,179,1) 3%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#336970', endColorstr='#51a7b3',GradientType=0 ); /* IE6-9 */
+}
+
+footer .site-name h2.block-title, footer .site-name h3 {
+  width: 280px;
+  margin: 0px auto;
+  background-color: #51A7B3;
 }
