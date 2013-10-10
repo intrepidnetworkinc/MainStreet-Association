@@ -223,7 +223,7 @@ section.blue .more-link a {
   color: #478cc0;
 }
 
-.main-container section.block-views .view-content a {
+.main-container .region.region-content section.block-views .view-content a {
   color: #4a4949;
   border-bottom: 1px dotted #4a4949;
   padding: 15px 0 15px 20px;
