@@ -26,6 +26,11 @@ a:hover, a:focus {
   margin: 0;
 }
 
+.btn {
+  -webkit-border-radius: 0px;
+      border-radius: 0px;
+}
+
 @media (min-width:1200px) {
   .navbar-fixed-top nav {
     position: relative;

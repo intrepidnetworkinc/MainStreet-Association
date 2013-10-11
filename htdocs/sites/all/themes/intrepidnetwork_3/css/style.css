@@ -74,6 +74,41 @@ h1, h2 .block-title-link, .more-link a, .region-footer section.site-name h2 {
   text-transform: uppercase;
 }
 
+/* Inset Shadow */
+.inset-shadow {
+  -webkit-box-shadow: inset 0px 0px 180px 0px rgba(0, 0, 0, .24);
+          box-shadow: inset 0px 0px 180px 0px rgba(0, 0, 0, .24);
+}
+
+/* Text Glow White */
+.glow-wht:hover {
+  text-shadow: 0px 0px 5px #ffffff;
+        filter: dropshadow(color=#ffffff, offx=0, offy=0);
+}
+
+/* Background Colors */
+.bkg-hot-pink {
+  background-color: #f73ec1;
+}
+
+/* Buttons */
+.btn-hot-pink {
+  background-color: #C6088F;
+  border-color: rgba(0, 0, 0, 0);
+  color: #FFFFFF;
+}
+
+.edit-link {
+  margin: 2px 0 0 -35px;
+  /*padding: 1px 5px;*/
+  position: absolute;
+  z-index: 1;
+}
+
+.btn.btn-hot-pink:hover, .btn.btn-hot-pink:focus {
+  color: #fff;
+}
+
 body {
   padding-top: 150px;
 }
@@ -207,8 +242,8 @@ section.blue h2 {
   background-color: #478cc0;
 }
 
-.main-container section h2 {
-  padding: 0 0 0 20px;
+.main-container section h2.block-title {
+  padding: 9px 0 9px 20px;
 }
 
 section.gold h2 a, section.blue h2 a {
@@ -250,9 +285,18 @@ section.blue .more-link a {
   border-bottom: 2px solid #478cc0;
 }
 
-/*.region-footer section.site-name h3 {
-  margin: 0;
-}*/
+section.inset-shadow.bkg-hot-pink {
+  padding: 17px 30px 0;
+}
+
+section.inset-shadow.bkg-hot-pink p {
+  margin: 0 0 42px;
+}
+
+section.block #mc-embedded-subscribe {
+  margin: 52px 0;
+  float: right;
+}
 
 .region-footer section.col-md-2 {
   float: left;
@@ -327,4 +371,44 @@ footer .site-name h2.block-title, footer .site-name h3 {
   width: 280px;
   margin: 0px auto;
   background-color: #51A7B3;
+}
+
+@media (min-width:992px) and (max-width: 1024px){
+  /* Font sizes */
+  body {
+    font-size: 13px;
+  }
+  .main-container .block-title-link, .more-link a {
+    font-size: 24px;
+  }
+  
+  .block-title-link .first-word, .more-link a .first-word {
+    font-size: 22px;
+  }
+  .main-container .region.region-content section.block-views .view-content a {
+    padding: 15px 0 15px 15px;
+  }
+}
+@media (min-width:992px) {
+  section.inset-shadow.bkg-hot-pink {
+    margin: 0 0 0 15px;
+  }
+  
+  #block-views-calendar-block-2 {
+    margin: 0 0 0 -15px;
+  }
+}
+@media (max-width:991px) {
+  .more-link a {
+    margin: 30px 0;
+  }  
+}
+
+@media (max-width:359px){
+  .block-title-link .first-word, .more-link a .first-word {
+    display: block;
+    font-size: 20px;
+    line-height: 1.5;
+    margin: 0 0 -8px;
+  } 
 }
