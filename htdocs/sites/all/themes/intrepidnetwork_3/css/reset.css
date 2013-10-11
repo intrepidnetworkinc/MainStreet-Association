@@ -7,6 +7,10 @@
   min-height: 0;
 }*/
 
+header.navbar > .container, header.navbar .navbar-collapse, footer .container {
+  padding: 0;
+}
+
 img {
   height: auto !important;
 }
@@ -29,6 +33,10 @@ a:hover, a:focus {
 .btn {
   -webkit-border-radius: 0px;
       border-radius: 0px;
+}
+
+.btn-sm, .btn-xs {
+  font-weight: bold;
 }
 
 @media (min-width:1200px) {

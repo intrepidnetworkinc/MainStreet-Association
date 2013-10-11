@@ -99,10 +99,15 @@ h1, h2 .block-title-link, .more-link a, .region-footer section.site-name h2 {
 }
 
 .edit-link {
-  margin: 2px 0 0 -35px;
-  /*padding: 1px 5px;*/
+  margin: 2px 0 0 -50px;
   position: absolute;
   z-index: 1;
+}
+
+.flexslider .edit-link {
+  margin: 2px;
+  position: absolute;
+  top: 0;
 }
 
 .btn.btn-hot-pink:hover, .btn.btn-hot-pink:focus {
@@ -145,9 +150,9 @@ header.navbar {
   display: block;
   float: none;
   left: 0;
-  margin: 0 10px 0 0;
+  margin: 0 10px 0 0px;
   position: absolute;
-  top: 96px;
+  top: 88px;
 }
 
 .navbar .nav > li > a {
@@ -373,6 +378,10 @@ footer .site-name h2.block-title, footer .site-name h3 {
   background-color: #51A7B3;
 }
 
+.view-frontpage .view-content > div.col-md-4 {
+  margin: 0 0 30px;
+}
+
 @media (min-width:992px) and (max-width: 1024px){
   /* Font sizes */
   body {
@@ -392,11 +401,12 @@ footer .site-name h2.block-title, footer .site-name h3 {
 @media (min-width:992px) {
   section.inset-shadow.bkg-hot-pink {
     margin: 0 0 0 15px;
+    max-width: 360px;
   }
   
-  #block-views-calendar-block-2 {
+/*  #block-views-calendar-block-2, .view-frontpage .view-content > div:nth-child(1) {
     margin: 0 0 0 -15px;
-  }
+  }*/
 }
 @media (max-width:991px) {
   .more-link a {
