@@ -39,6 +39,10 @@ a:hover, a:focus {
   font-weight: bold;
 }
 
+section.block-block {
+  display: inline-block;
+}
+
 @media (min-width:1200px) {
   .navbar-fixed-top nav {
     position: relative;

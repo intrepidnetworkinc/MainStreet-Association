@@ -303,18 +303,25 @@ section.block #mc-embedded-subscribe {
   float: right;
 }
 
-.region-footer section.col-md-2 {
+/*.region-footer section.col-sm-4.col-md-2 {
   float: left;
-  padding: 15px 15px;
   border-right: 1px solid #74b9c2;
-  color: #fff;
-  margin: 35px 0 105px;
 }
 
 .region-footer section.col-md-2 {
+  padding: 15px;
+  margin: 30px 0 90px;
+}
+
+.region-footer section.col-sm-4 {
+  padding: 15px 30px;
+  margin: 30px 0 0;
+}
+
+.region-footer section.col-sm-4.col-md-2 {
   margin-left: 0;
   min-height: 230px;
-}
+}*/
 
 .region-footer section.site-name {
   text-align: center;
@@ -360,6 +367,7 @@ section.block #mc-embedded-subscribe {
 }
 
 footer {
+  color: #fff;
   background-color: #51a7b3;
   padding: 30px 0;
   background: rgb(51,105,112); /* Old browsers */
@@ -378,7 +386,7 @@ footer .site-name h2.block-title, footer .site-name h3 {
   background-color: #51A7B3;
 }
 
-.view-frontpage .view-content > div.col-md-4 {
+.view-frontpage .view-content > div.col-sm-4.col-md-2 {
   margin: 0 0 30px;
 }
 
@@ -403,17 +411,18 @@ footer .site-name h2.block-title, footer .site-name h3 {
     margin: 0 0 0 15px;
     max-width: 360px;
   }
-  
-/*  #block-views-calendar-block-2, .view-frontpage .view-content > div:nth-child(1) {
-    margin: 0 0 0 -15px;
-  }*/
 }
 @media (max-width:991px) {
   .more-link a {
     margin: 30px 0;
   }  
 }
-
+@media (min-width:768px) and (max-width:991px){
+  .region-footer section.logo p {
+    padding: 0;
+    text-align: center;
+  }  
+}
 @media (max-width:359px){
   .block-title-link .first-word, .more-link a .first-word {
     display: block;

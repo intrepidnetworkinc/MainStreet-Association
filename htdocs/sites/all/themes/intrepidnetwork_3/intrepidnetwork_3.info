@@ -18,6 +18,7 @@ stylesheets[all][] = css/style.css
 stylesheets[all][] = css/reset.css
 stylesheets[all][] = css/flexslider-override.css
 stylesheets[all][] = css/ubercart_style.css
+stylesheets[all][] = css/fullscreen.css
 
 ;**********************************
 ; METHOD 1: Bootstrap Source Files
