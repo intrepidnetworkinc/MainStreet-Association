@@ -43,6 +43,30 @@ section.block-block {
   display: inline-block;
 }
 
+.nav .open > a, .nav .open > a:focus, .nav .open > a:hover {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.dropdown-menu {
+  background-clip: padding-box;
+  background-color: #51A7B3;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.176);
+  /*display: none;*/
+  float: left;
+  font-size: 14px;
+  left: 0;
+  list-style: none outside none;
+  margin: 2px 0 0;
+  min-width: 160px;
+  padding: 5px 0;
+  position: absolute;
+  top: 100%;
+  z-index: 1000;
+}
+
 @media (min-width:1200px) {
   .navbar-fixed-top nav {
     position: relative;
