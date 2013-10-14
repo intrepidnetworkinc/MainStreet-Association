@@ -38,7 +38,7 @@ function node_export_menu() {
     'description' => 'Configure the settings for Node export.',
     'file' => 'node_export.pages.inc',
   );
-  $selected_formats = variable_get('node_export_format', array('drupal'));
+  $selected_formats = variable_get('node_export_format', array('drupal' => 'drupal'));
   if (count(array_filter($selected_formats)) > 1) {
     $format_handlers = node_export_format_handlers();
     foreach ($format_handlers as $format_handler => $format) {
@@ -297,7 +297,7 @@ function node_export_action_form($context, &$form_state, $format = NULL) {
   // Get the name of the vbo views field
   $vbo = _views_bulk_operations_get_field($form_state['build_info']['args'][0]);
   // Adjust the selection in case the user chose 'select all'
-  _views_bulk_operations_adjust_selection($form_state['selection'], $form_state['select_all_pages'], $vbo);
+  views_bulk_operations_direct_adjust($form_state['selection'], $vbo);
   $nodes = array_combine($form_state['selection'], $form_state['selection']);
   return node_export_bulk_operation($nodes);
 }
