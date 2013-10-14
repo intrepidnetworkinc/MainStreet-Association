@@ -114,6 +114,16 @@ h1, h2 .block-title-link, .more-link a, .region-footer section.site-name h2 {
   color: #fff;
 }
 
+/* Display NONE */
+.not-logged-in .edit-link {
+  display: none;
+}
+
+/* Top Margin 30 */
+.topMargin30 {
+  margin-top: 30px;
+}
+
 body {
   padding-top: 150px;
 }
@@ -408,7 +418,7 @@ footer .site-name h2.block-title, footer .site-name h3 {
 }
 @media (min-width:992px) {
   section.inset-shadow.bkg-hot-pink {
-    margin: 0 0 0 15px;
+    margin-left: 15px;
     max-width: 360px;
   }
 }
