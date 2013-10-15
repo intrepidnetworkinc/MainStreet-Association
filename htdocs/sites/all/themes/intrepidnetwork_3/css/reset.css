@@ -39,7 +39,7 @@ a:hover, a:focus {
   font-weight: bold;
 }
 
-section.block-block {
+section.block-block, .node-community-group .col-sm-12 {
   display: inline-block;
 }
 
