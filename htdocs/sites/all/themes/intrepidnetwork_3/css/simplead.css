@@ -1,0 +1,10 @@
+@charset "utf-8";
+/* CSS Document */
+
+.simplead-container.image-ad {
+  margin-bottom: 30px;
+}
+
+.simplead-container.image-ad.last {
+  margin-bottom: 0px;
+}
