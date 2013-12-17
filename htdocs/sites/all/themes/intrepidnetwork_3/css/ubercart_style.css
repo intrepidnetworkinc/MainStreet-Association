@@ -6,3 +6,24 @@
 .form-control {
   padding: 1px 4px;
 }
+
+.view-uc-catalog-terms .view-content > div a:nth-child(1) {
+  display: block;
+  min-height: 110px;
+  text-align: center;
+}
+
+.view-uc-catalog-terms .view-content > div a:nth-child(1) img {
+  max-width: 100%;
+}
+
+.view-uc-catalog-terms .view-content > div a:nth-child(2) {
+  background-color: #51A7B3;
+  color: #FFFFFF;
+  display: block;
+  font-weight: bold;
+  margin-bottom: 30px;
+  min-height: 90px;
+  padding: 5px;
+  text-align: center;
+}
