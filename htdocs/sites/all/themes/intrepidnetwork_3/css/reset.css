@@ -6,7 +6,9 @@
 /*[class*="span"] {
   min-height: 0;
 }*/
-
+.navbar-fixed-top {
+  border-width: 0;
+}
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
   background-color: rgba(0, 0, 0, 0);
   color: #4A4949;
@@ -324,6 +326,30 @@ section.block-block, .node-community-group .col-sm-12 {
 }
 .view-content > .row {
   margin-bottom: 30px;
+}
+.btn.btn-default.btn-xs.col-md-12 {
+  margin-right: 30px;
+}
+.view-ocean-beach-communityp:last-child {
+  margin-bottom: 10px;
+}
+.search-info {
+  display:none;
+}
+ol.search-results.node-results {
+  padding-left: 0;
+}
+li.search-result, .listBottomBorder {
+  list-style-type: none;
+  border-bottom: 1px dotted #4A4949;
+  color: #4A4949;
+  display: block;
+  padding: 15px 0 15px 0;
+}
+object#webcam_holder {
+  width: 100%;
+  height: auto;
+  min-height: 400px;
 }
  @media (min-width:1200px) {
 .navbar-fixed-top nav {

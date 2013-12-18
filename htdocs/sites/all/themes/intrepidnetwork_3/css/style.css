@@ -107,6 +107,10 @@ button.glow-wht:focus, button.glow-wht:hover, .glow-wht li a:hover {
 .topMargin0 {
   margin-top: 0px;
 }
+/* Top Margin 10 */
+.topMargin10 {
+  margin-top: 10px;
+}
 /* Top Margin 25 */
 .topMargin25 {
   margin-top: 25px;
@@ -114,6 +118,10 @@ button.glow-wht:focus, button.glow-wht:hover, .glow-wht li a:hover {
 /* Top Margin 30 */
 .topMargin30 {
   margin-top: 30px;
+}
+/* Bottom Margin 10 */
+.bottomMargin10 {
+  margin-bottom: 10px;
 }
 /* Hover/Focus Colors */
 .section-headline-link a:focus, .section-headline-link a:hover, .main-container .region.region-content section.block-views .view-content a:focus, .main-container .region.region-content section.block-views .view-content a:hover {
