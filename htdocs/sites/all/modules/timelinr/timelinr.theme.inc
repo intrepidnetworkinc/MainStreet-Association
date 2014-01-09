@@ -72,9 +72,10 @@ function theme_timelinr_nodata() {
  * Implementation of template preprocess for the view fields.
  */
 function template_preprocess_timelinr_view_timelinrfields(&$vars) {
-  $view    = &$vars['view'];
+  $view = &$vars['view'];
   $options = $vars['options'];
-  $row     = $vars['row'];
+  $row = $vars['row'];
+  $img = '';
 
   $attributes = NULL;
 
@@ -84,15 +85,28 @@ function template_preprocess_timelinr_view_timelinrfields(&$vars) {
     switch ($id) {
       case $options['image_field']:
         $field_image_name = "field_{$options['image_field']}";
-        $image_url        = $field_output = $row->{$field_image_name}[0]['raw']['uri'];
-        $presetname       = $row->{$field_image_name}[0]['rendered']['#image_style'];
+        if (!empty($row->{$field_image_name}[0]['raw'])) {
+          $image_uri = $row->{$field_image_name}[0]['raw']['uri'];
+          $presetname = $row->{$field_image_name}[0]['rendered']['#image_style'];
 
-        $params = array(
-          'style_name' => $presetname,
-          'path' => $image_url,
-          'attributes' => $attributes,
-        );
-        $img = theme('image_style', $params);
+          // If we have provided an image-style we render image with it.
+          if (!empty($presetname)) {
+            $params = array(
+              'style_name' => $presetname,
+              'path' => $image_uri,
+              'attributes' => $attributes,
+            );
+            $img = theme('image_style', $params);
+          }
+          // If no image-style is provided we output original image.
+          else {
+            $params = array(
+              'path' => $image_uri,
+              'attributes' => $attributes,
+            );
+            $img = theme('image', $params);
+          }
+        }
         break;
 
       case $options['title_field']:
@@ -105,9 +119,9 @@ function template_preprocess_timelinr_view_timelinrfields(&$vars) {
     }
   }
   $vars['id_item'] = 'timelinr-dates-' . $view->name . '-' . $view->current_display . '_' . $vars['id'];
-  $vars['image']    = $img;
+  $vars['image'] = $img;
   $vars['headline'] = $title;
-  $vars['content']  = $content;
+  $vars['content'] = $content;
 }
 
 /**
