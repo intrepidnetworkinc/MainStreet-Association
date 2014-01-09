@@ -3,9 +3,6 @@
 
 /* Bootstrap reset */
 
-/*[class*="span"] {
-  min-height: 0;
-}*/
 .navbar-fixed-top {
   border-width: 0;
 }
@@ -350,6 +347,16 @@ object#webcam_holder {
   width: 100%;
   height: auto;
   min-height: 400px;
+}
+.thumbnail {
+  background-color: #F5F5F5;
+  border: 0 solid #DDDDDD;
+}
+.page-attractions h2 a {
+ color: #9E0079; 
+}
+.page-resources h2 a {
+  color: #5CA7C7;
 }
  @media (min-width:1200px) {
 .navbar-fixed-top nav {
