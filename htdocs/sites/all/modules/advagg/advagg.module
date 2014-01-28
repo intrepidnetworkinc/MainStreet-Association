@@ -86,10 +86,21 @@ define('ADVAGG_SHOW_BYPASS_COOKIE_MESSAGE', TRUE);
  */
 define('ADVAGG_URL_INBOUND_ALTER', TRUE);
 
+/**
+ * Allow JavaScript insertion into any scope even if theme does not support it.
+ */
+define('ADVAGG_SCRIPTS_SCOPE_ANYWHERE', FALSE);
+
+/**
+ * Empty the scripts key inside of template_process_html replacement function.
+ */
+define('ADVAGG_CLEAR_SCRIPTS', TRUE);
+
 // Core hook implementations.
 /**
- * Inbound URL rewrite helper
- * If host includes subdomain, rewrite URI and internal path if necessary
+ * Inbound URL rewrite helper.
+ *
+ * If host includes subdomain, rewrite URI and internal path if necessary.
  */
 function advagg_url_inbound_alter(&$path, $original_path, $path_language) {
   // Do nothing if this has been disabled.
@@ -119,6 +130,7 @@ function advagg_hook_info() {
     'advagg_build_aggregate_plans_alter',
     'advagg_changed_files',
     'advagg_scan_for_changes',
+    'advagg_context_alter',
   );
   $hooks = array();
   foreach ($advagg_hooks as $hook) {
@@ -231,7 +243,7 @@ function advagg_file_url_alter(&$original_uri) {
   }
 
   // Remove cdn/farfuture/BASE64/prefix:value/ from the URI.
-  $original_uri = preg_replace('/^.*(cdn\/farfuture\/[A-Za-z0-9-_]{43}\/[A-Za-z]+\:[A-Za-z0-9-_]+\/)/', '', $original_uri);
+  $original_uri = preg_replace('/cdn\/farfuture\/[A-Za-z0-9-_]{43}\/[A-Za-z]+\:[A-Za-z0-9-_]+\//', '', $original_uri);
   return;
 }
 
@@ -308,11 +320,20 @@ function advagg_menu() {
 }
 
 /**
- * Implements hook_cron().
+ * Implement hook_cron().
  *
- * This should be ran about once a day.
+ * This will be ran once a day at most.
+ *
+ * @param bool $bypass_time_check
+ *   Set to TRUE to skip the 24 hour check.
  */
-function advagg_cron() {
+function advagg_cron($bypass_time_check = FALSE) {
+  // Execute once a day (24 hours).
+  if (!$bypass_time_check && variable_get('advagg_cron_timestamp', 0) > (REQUEST_TIME - 86400)) {
+    return array();
+  }
+  variable_set('advagg_cron_timestamp', REQUEST_TIME);
+
   $return = array();
   // Clear out all stale advagg aggregated files.
   module_load_include('inc', 'advagg', 'advagg.cache');
@@ -343,11 +364,10 @@ function advagg_flush_caches($all_bins = FALSE) {
   $flushed = advagg_push_new_changes();
 
   // Get list of cache bins to clear.
-  $bins = array();
-  $bins[] = 'cache_advagg_aggregates';
-  if ($all_bins) {
-    $bins[] = 'cache_advagg_info';
-  }
+  $bins = array(
+    'cache_advagg_aggregates',
+    'cache_advagg_info',
+  );
   return $bins;
 }
 
@@ -452,8 +472,8 @@ function advagg_ajax_render_alter(&$commands) {
   }
 
   // Add in AdvAgg JS.
-  $scripts_header = advagg_get_js('header', $items['js']);
-  $scripts_footer = advagg_get_js('footer', $items['js']);
+  $scripts_footer = advagg_get_js('footer', $items['js'], TRUE);
+  $scripts_header = advagg_get_js('header', $items['js'], TRUE);
   $extra_commands = array();
   if (!empty($scripts_header)) {
     $extra_commands[] = ajax_command_prepend('head', $scripts_header);
@@ -483,12 +503,12 @@ function advagg_js_alter(&$js) {
       continue;
     }
 
-    // If type is external but doesn't start with http or //, change it to file.
+    // If type is external but doesn't start with http or // change it to file.
     if ($value['type'] == 'external' && stripos($value['data'], 'http://') !== 0 && stripos($value['data'], 'https://') !== 0 && stripos($value['data'], '//') !== 0) {
       $value['type'] = 'file';
     }
 
-    // If type is file but it starts with http or //, change it to external.
+    // If type is file but it starts with http or // change it to external.
     if ((stripos($value['data'], 'http://') === 0 || stripos($value['data'], 'https://') === 0 || stripos($value['data'], '//') === 0) && $value['type'] == 'file') {
       $value['type'] = 'external';
     }
@@ -509,12 +529,12 @@ function advagg_css_alter(&$css) {
       continue;
     }
 
-    // If type is external but doesn't start with http or //, change it to file.
+    // If type is external but doesn't start with http or // change it to file.
     if ($value['type'] == 'external' && stripos($value['data'], 'http://') !== 0 && stripos($value['data'], 'https://') !== 0 && stripos($value['data'], '//') !== 0) {
       $value['type'] = 'file';
     }
 
-    // If type is file but it starts with http or //, change it to external.
+    // If type is file but it starts with http or // change it to external.
     if ((stripos($value['data'], 'http://') === 0 || stripos($value['data'], 'https://') === 0 || stripos($value['data'], '//') === 0) && $value['type'] == 'file') {
       $value['type'] = 'external';
     }
@@ -568,6 +588,8 @@ function advagg_preprocess_html() {
       'content' =>  'IE=edge,chrome=1',
     ),
     '#weight' => '-99999',
+    '#prefix' => '<!--[if IE]>',
+    '#suffix' => '<![endif]-->',
   );
 
   // Add header meta tag for IE to head.
@@ -946,6 +968,10 @@ function _advagg_process_html(&$variables) {
   }
 
   // JS needs hacks.
+  // Clear out all old scripts
+  if (variable_get('advagg_clear_scripts', ADVAGG_CLEAR_SCRIPTS)) {
+    $variables['scripts'] = '';
+  }
   if (!isset($variables['scripts'])) {
     $variables['scripts'] = '';
   }
@@ -984,15 +1010,17 @@ function _advagg_process_html(&$variables) {
           $variables['page_bottom'] .= $scripts;
           $js_cache['page_bottom'] = $scripts;
         }
-        // Scripts in other places.
-        elseif (isset($variables[$scope]) && is_string($variables[$scope]) && array_key_exists($scope, $GLOBALS['theme_info']->info['regions'])) {
-          $variables[$scope] .= $scripts;
-          $js_cache[$scope] = $scripts;
-        }
-        // Add javascript to scripts if we can't find the region in the theme.
-        else {
-          $variables['scripts'] .= $scripts;
-          $js_cache['scripts'] .= $scripts;
+        elseif (variable_get('advagg_scripts_scope_anywhere', ADVAGG_SCRIPTS_SCOPE_ANYWHERE)) {
+          // Scripts in other places.
+          if (isset($variables[$scope]) && is_string($variables[$scope]) && array_key_exists($scope, $GLOBALS['theme_info']->info['regions'])) {
+            $variables[$scope] .= $scripts;
+            $js_cache[$scope] = $scripts;
+          }
+          // Add javascript to scripts if we can't find the region in the theme.
+          else {
+            $variables['scripts'] .= $scripts;
+            $js_cache['scripts'] .= $scripts;
+          }
         }
       }
 
@@ -1090,6 +1118,7 @@ function advagg_get_full_js($javascript = NULL, $skip_alter = FALSE) {
  * @see drupal_js_defaults()
  */
 function advagg_get_js($scope = 'header', $javascript = NULL, $skip_alter = FALSE) {
+  $javascript_settings_data = &drupal_static(__FUNCTION__, array());
   if (empty($javascript)) {
     return '';
   }
@@ -1110,19 +1139,60 @@ function advagg_get_js($scope = 'header', $javascript = NULL, $skip_alter = FALS
   // without that group. We do not use the $key => $item type of iteration,
   // because PHP uses an internal array pointer for that, and we're modifying
   // the array order inside the loop.
-  foreach (array_keys($items) as $key) {
-    if ($items[$key]['type'] == 'setting') {
-      $item = $items[$key];
-      unset($items[$key]);
-      $items[$key] = $item;
+  if ($scope == 'footer' && module_exists('advagg_mod') && variable_get('advagg_mod_js_footer', ADVAGG_MOD_JS_FOOTER) == 2) {
+    // Get all settings from the items array.
+    $settings_js = array();
+    foreach (array_keys($items) as $key) {
+      if ($items[$key]['type'] == 'setting') {
+        $settings_js[] = $items[$key];
+        unset($items[$key]);
+      }
+    }
+
+    // Add settings array back in right before the footer shift happened.
+    if (!empty($settings_js)) {
+      $counter = 0;
+      foreach ($items as $key => $item) {
+        // Move $settings_js to the bottom of the js that was added to the
+        // header, but has now been moved to the footer via advagg_mod.
+        if ($item['group'] > 9000) {
+          array_splice($items, $counter, 0, $settings_js);
+          unset($settings_js);
+          break;
+        }
+        $counter++;
+      }
+    }
+    if (!empty($settings_js)) {
+      $items = array_merge($items, $settings_js);
+    }
+  }
+  else {
+    foreach (array_keys($items) as $key) {
+      if ($items[$key]['type'] == 'setting') {
+        $item = $items[$key];
+        unset($items[$key]);
+        $items[$key] = $item;
+      }
     }
   }
 
   // Provide the page with information about the individual JavaScript files
   // used, information not otherwise available when aggregation is enabled.
-  $setting['ajaxPageState']['js'] = array_fill_keys(array_keys($items), 1);
+  // Also filter out empty items due to numeric array keys.
+  $setting['ajaxPageState']['js'] = array_fill_keys(array_filter(array_keys($items), 'advagg_remove_short_keys'), 1);
   unset($setting['ajaxPageState']['js']['settings']);
   drupal_add_js($setting, 'setting');
+  // For performance reasons we store this locally.
+  if ($scope != 'header') {
+    if (!empty($javascript_settings_data)) {
+      foreach ($javascript_settings_data as $js_data) {
+        $items['settings']['data'][] = $js_data;
+      }
+      unset($javascript_settings_data);
+    }
+    $javascript_settings_data[] = $setting;
+  }
 
   // If we're outputting the header scope, then this might be the final time
   // that drupal_get_js() is running, so add the setting to this output as well
@@ -1143,12 +1213,30 @@ function advagg_get_js($scope = 'header', $javascript = NULL, $skip_alter = FALS
   // Aurora & Omega themes uses alter without checking previous value.
   if (variable_get('advagg_enforce_scripts_callback', TRUE)) {
     $element_info = &drupal_static('element_info');
-    if ($element_info['scripts']['#aggregate_callback'] != '_advagg_aggregate_js') {
+    if (empty($element_info['scripts']) || $element_info['scripts']['#aggregate_callback'] != '_advagg_aggregate_js') {
       advagg_element_info_alter($element_info);
     }
   }
 
   return drupal_render($elements);
+}
+
+/**
+ * Callback for array_filter. Will return FALSE if strlen < 3.
+ *
+ * @param $array_value
+ *   A value from an array.
+ *
+ * @return
+ *   TRUE or FALSE.
+ */
+function advagg_remove_short_keys($array_value) {
+  if (strlen($array_value) < 3) {
+    return FALSE;
+  }
+  else {
+    return TRUE;
+  }
 }
 
 /**
@@ -1181,6 +1269,13 @@ function advagg_get_js_scopes($javascript) {
   // Default to header if nothing found.
   if (empty($scopes)) {
     $scopes['header'] = TRUE;
+  }
+
+  // Process header last.
+  if (isset($scopes['header']) && count($scopes) > 1) {
+    $temp = $scopes['header'];
+    unset($scopes['header']);
+    $scopes['header'] = $temp;
   }
 
   // Return the scopes.
@@ -1279,53 +1374,81 @@ function advagg_enabled() {
       drupal_set_message(t('Please run <a href="@link">database updates</a>. AdvAgg will remain disabled until done.', array('@link' => url('update.php'))), 'error');
     }
   }
-
-  // Disable AdvAgg if maintenance mode is defined.
-  if (defined('MAINTENANCE_MODE')) {
-    $GLOBALS['conf']['advagg_enabled'] = FALSE;
-  }
-
-  // Only run code below if advagg is enabled.
-  if (variable_get('advagg_enabled', ADVAGG_ENABLED)) {
-    // Don't use AdvAgg or preprocessing functions if the disable cookie is set.
-    $cookie_name = 'AdvAggDisabled';
-    $key = drupal_hash_base64(drupal_get_private_key());
-    if (!empty($_COOKIE[$cookie_name]) && $_COOKIE[$cookie_name] == $key) {
-      $GLOBALS['conf']['advagg_enabled'] = FALSE;
-      $GLOBALS['conf']['preprocess_css'] = FALSE;
-      $GLOBALS['conf']['preprocess_js'] = FALSE;
-
-      // Let the user know that the AdvAgg bypass cookie is currently set.
-      static $msg_set;
-      if (!isset($msg_set) && variable_get('advagg_show_bypass_cookie_message', ADVAGG_SHOW_BYPASS_COOKIE_MESSAGE)) {
-        $msg_set = TRUE;
-        if (user_access('administer site configuration')) {
-          drupal_set_message(t('The AdvAgg bypass cookie is currently enabled. Turn it off by going to the <a href="@advagg_operations">AdvAgg Operations</a> page and clicking the <em>Toggle the "aggregation bypass cookie" for this browser</em> button.', array(
-          '@advagg_operations' => url(advagg_admin_config_root_path() . '/advagg/operations', array('fragment' => 'edit-bypass')),
-          )));
-        }
-        else {
-          drupal_set_message(t('The AdvAgg bypass cookie is currently enabled. Turn it off by <a href="@login">logging in</a> with a user with the "administer site configuration" permissions and going to the AdvAgg Operations page (located at @advagg_operations) and clicking the <em>Toggle the "aggregation bypass cookie" for this browser</em> button.', array(
-            '@login' => 'user/login',
-            '@advagg_operations' => advagg_admin_config_root_path() . '/advagg/operations',
-          )));
-        }
-      }
-    }
-    // Disable advagg if requested.
-    if (isset($_GET['advagg']) && $_GET['advagg'] == -1 && user_access('bypass advanced aggregation')) {
-      $GLOBALS['conf']['advagg_enabled'] = FALSE;
-      $GLOBALS['conf']['preprocess_css'] = FALSE;
-      $GLOBALS['conf']['preprocess_js'] = FALSE;
-    }
-    // Enable core preprocessing if requested.
-    if (isset($_GET['advagg-core']) && $_GET['advagg-core'] == 1 && user_access('bypass advanced aggregation')) {
+  else {
+    // Allow for AdvAgg to be enabled per request.
+    if (   isset($_GET['advagg'])
+        && $_GET['advagg'] == 1
+        && !defined('MAINTENANCE_MODE')
+        && user_access('bypass advanced aggregation')
+          ) {
+      $GLOBALS['conf']['advagg_enabled'] = TRUE;
       $GLOBALS['conf']['preprocess_css'] = TRUE;
       $GLOBALS['conf']['preprocess_js'] = TRUE;
     }
-    // Enable debugging if requested.
-    if (isset($_GET['advagg-debug']) && $_GET['advagg-debug'] == 1 && user_access('bypass advanced aggregation')) {
-      $GLOBALS['conf']['advagg_debug'] = TRUE;
+
+    // Disable AdvAgg if maintenance mode is defined.
+    if (defined('MAINTENANCE_MODE')) {
+      $GLOBALS['conf']['advagg_enabled'] = FALSE;
+    }
+    // Only run code below if advagg is enabled.
+    if (variable_get('advagg_enabled', ADVAGG_ENABLED)) {
+      // Don't use AdvAgg or preprocessing functions if the disable cookie is set.
+      $cookie_name = 'AdvAggDisabled';
+      $key = drupal_hash_base64(drupal_get_private_key());
+      if (!empty($_COOKIE[$cookie_name]) && $_COOKIE[$cookie_name] == $key) {
+        $GLOBALS['conf']['advagg_enabled'] = FALSE;
+        $GLOBALS['conf']['preprocess_css'] = FALSE;
+        $GLOBALS['conf']['preprocess_js'] = FALSE;
+
+        // Let the user know that the AdvAgg bypass cookie is currently set.
+        static $msg_set;
+        if (!isset($msg_set) && variable_get('advagg_show_bypass_cookie_message', ADVAGG_SHOW_BYPASS_COOKIE_MESSAGE)) {
+          $msg_set = TRUE;
+          if (user_access('administer site configuration')) {
+            drupal_set_message(t('The AdvAgg bypass cookie is currently enabled. Turn it off by going to the <a href="@advagg_operations">AdvAgg Operations</a> page and clicking the <em>Toggle the "aggregation bypass cookie" for this browser</em> button.', array(
+            '@advagg_operations' => url(advagg_admin_config_root_path() . '/advagg/operations', array('fragment' => 'edit-bypass')),
+            )));
+          }
+          else {
+            drupal_set_message(t('The AdvAgg bypass cookie is currently enabled. Turn it off by <a href="@login">logging in</a> with a user with the "administer site configuration" permissions and going to the AdvAgg Operations page (located at @advagg_operations) and clicking the <em>Toggle the "aggregation bypass cookie" for this browser</em> button.', array(
+              '@login' => 'user/login',
+              '@advagg_operations' => advagg_admin_config_root_path() . '/advagg/operations',
+            )));
+          }
+        }
+      }
+      // Disable advagg if requested.
+      if (   isset($_GET['advagg'])
+          && $_GET['advagg'] == -1
+          && user_access('bypass advanced aggregation')
+            ) {
+        $GLOBALS['conf']['advagg_enabled'] = FALSE;
+        $GLOBALS['conf']['preprocess_css'] = FALSE;
+        $GLOBALS['conf']['preprocess_js'] = FALSE;
+      }
+      // Disable core preprocessing if requested.
+      if (   isset($_GET['advagg-core'])
+          && $_GET['advagg-core'] == 0
+          && user_access('bypass advanced aggregation')
+            ) {
+        $GLOBALS['conf']['preprocess_css'] = FALSE;
+        $GLOBALS['conf']['preprocess_js'] = FALSE;
+      }
+      // Enable core preprocessing if requested.
+      if (   isset($_GET['advagg-core'])
+          && $_GET['advagg-core'] == 1
+          && user_access('bypass advanced aggregation')
+            ) {
+        $GLOBALS['conf']['preprocess_css'] = TRUE;
+        $GLOBALS['conf']['preprocess_js'] = TRUE;
+      }
+      // Enable debugging if requested.
+      if (   isset($_GET['advagg-debug'])
+          && $_GET['advagg-debug'] == 1
+          && user_access('bypass advanced aggregation')
+            ) {
+        $GLOBALS['conf']['advagg_debug'] = TRUE;
+      }
     }
   }
 
@@ -1362,6 +1485,7 @@ function advagg_current_hooks_hash_array() {
       'advagg_global_counter' => advagg_get_global_counter(),
       'base_path' => $GLOBALS['base_path'],
       'advagg_ie_css_selector_limiter' => variable_get('advagg_ie_css_selector_limiter', ADVAGG_IE_CSS_SELECTOR_LIMITER),
+      'advagg_scripts_scope_anywhere' => variable_get('advagg_scripts_scope_anywhere', ADVAGG_SCRIPTS_SCOPE_ANYWHERE)
     ),
     'hooks' => advagg_hooks_implemented(FALSE),
   );
@@ -1435,6 +1559,7 @@ function advagg_hooks_implemented($all = TRUE) {
     'advagg_save_aggregate_alter' => array(),
     'advagg_current_hooks_hash_array_alter' => array(),
     'advagg_get_root_files_dir_alter' => array(),
+    'advagg_context_alter' => array(),
   );
   if ($all) {
     $hooks += array(
@@ -1488,6 +1613,8 @@ function advagg_get_hash_settings($hash) {
 /**
  * Get the CSS & JS path for advagg.
  *
+ * @param $reset
+ *   Set to TRUE to reset the static variables.
  * @return
  *   Example below:
  *   array(
@@ -1501,12 +1628,12 @@ function advagg_get_hash_settings($hash) {
  *     ),
  *   )
  */
-function advagg_get_root_files_dir() {
+function advagg_get_root_files_dir($reset = FALSE) {
   $css_paths = &drupal_static(__FUNCTION__ . '_css');
   $js_paths = &drupal_static(__FUNCTION__ . '_js');
 
   // Make sure directories are available and writable.
-  if (empty($css_paths) || empty($js_paths)) {
+  if (empty($css_paths) || empty($js_paths) || $reset) {
     $css_paths[0] = 'public://advagg_css';
     $js_paths[0] = 'public://advagg_js';
 
@@ -1544,6 +1671,11 @@ function advagg_build_aggregates($filenames) {
   module_load_include('inc', 'advagg', 'advagg.missing');
   $return = array();
   foreach ($filenames as $filename) {
+    // Skip if the file exists.
+    if (file_exists($filename)) {
+      continue;
+    }
+
     // Only create the file if we have a lock.
     $lock_name = 'advagg_' . $filename;
     if (lock_acquire($lock_name, 10)) {
@@ -1565,6 +1697,7 @@ function advagg_build_aggregates($filenames) {
  *   $items, and $settings.
  */
 function advagg_build_ajax_js_css() {
+  $settings = array();
   // Ajax responses aren't rendered with html.tpl.php, so we have to call
   // drupal_get_css() and drupal_get_js() here, in order to have new files added
   // during this request to be loaded by the page. We only want to send back
@@ -1577,6 +1710,10 @@ function advagg_build_ajax_js_css() {
     // reload all of the files, instead we return no new files.
     if (empty($_POST['ajax_page_state'][$type])) {
       $items[$type] = array();
+      $scripts = drupal_add_js();
+      if (!empty($scripts['settings'])) {
+        $settings = $scripts['settings'];
+      }
     }
     else {
       $function = 'drupal_add_' . $type;
@@ -1602,14 +1739,13 @@ function advagg_build_ajax_js_css() {
   // HTML in the page. We pass TRUE as the $skip_alter argument to prevent the
   // data from being altered again, as we already altered it above. Settings are
   // handled separately, afterwards.
-  $settings = array();
   if (isset($items['js']['settings'])) {
     $settings = $items['js']['settings'];
     unset($items['js']['settings']);
   }
   $styles = drupal_get_css($items['css'], TRUE);
-  $scripts_header = drupal_get_js('header', $items['js'], TRUE);
   $scripts_footer = drupal_get_js('footer', $items['js'], TRUE);
+  $scripts_header = drupal_get_js('header', $items['js'], TRUE);
   return array($styles, $scripts_header, $scripts_footer, $items, $settings);
 }
 
@@ -1787,7 +1923,7 @@ function advagg_pre_render_scripts($elements) {
     // If a group of files has been aggregated into a single file,
     // $group['data'] contains the URI of the aggregate file. Add a single
     // script element for this file.
-    if ($group['type'] == 'file' && isset($group['data'])) {
+    if (isset($group['type']) && $group['type'] == 'file' && isset($group['data'])) {
       $element = $element_defaults;
       $element['#attributes']['src'] = file_create_url($group['data']);
       $element['#browsers'] = $group['browsers'];
@@ -1842,8 +1978,18 @@ function advagg_pre_render_scripts($elements) {
         // Element properties that depend on item type.
         switch ($item['type']) {
           case 'setting':
+            // If in development mode and PHP >= 5.4.0 pretty print JSON.
+            static $php540;
+            if (!isset($php540)) {
+              $php540 = version_compare(PHP_VERSION, '5.4.0', '>=');
+            }
             $json_data = drupal_array_merge_deep_array($item['data']);
-            $json_data = @drupal_json_encode($json_data);
+            if ($php540 && variable_get('advagg_cache_level', ADVAGG_CACHE_LEVEL) == -1) {
+              $json_data = @json_encode($json_data, JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_PRETTY_PRINT);
+            }
+            else {
+              $json_data = @drupal_json_encode($json_data);
+            }
             $element['#value_prefix'] = $embed_prefix;
             $element['#value'] = 'jQuery.extend(Drupal.settings, ' . $json_data . ");";
             $element['#value_suffix'] = $embed_suffix;
@@ -1939,6 +2085,11 @@ function advagg_group_js($javascript) {
       case 'inline':
         // Do not group external, settings, and inline items.
         $group_keys = FALSE;
+        break;
+
+      default:
+        // Define this here so we don't get undefined alerts down below.
+        $group_keys = NULL;
         break;
     }
 

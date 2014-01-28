@@ -30,11 +30,11 @@ body.maintenance-page {
   font-style: normal;
 }
 /* Font Face: Afta */
-.first-word, .menu.nav, input, button, select, textarea, .footer-navigation section {
+h2, .first-word, .menu.nav, input, button, select, textarea, .footer-navigation section, .pager, .nav-tabs > li > a, .calendar-calendar th.days {
   font-family: 'AftasansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 /* Font Face: Afta */
-h1, h2 .block-title-link, .more-link a, .region-footer section.site-name h2 {
+h1, h2 .block-title-link, .more-link a, .region-footer section.site-name h2, .date-heading h3, .day {
   font-family: 'ArchivoBlackRegular', "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 /* Font sizes */
@@ -103,9 +103,25 @@ button.glow-wht:focus, button.glow-wht:hover, .glow-wht li a:hover {
 .not-logged-in .edit-link {
   display: none;
 }
+/* Top Margin 0 */
+.topMargin0 {
+  margin-top: 0px;
+}
+/* Top Margin 10 */
+.topMargin10 {
+  margin-top: 10px;
+}
+/* Top Margin 25 */
+.topMargin25 {
+  margin-top: 25px;
+}
 /* Top Margin 30 */
 .topMargin30 {
   margin-top: 30px;
+}
+/* Bottom Margin 10 */
+.bottomMargin10 {
+  margin-bottom: 10px;
 }
 /* Hover/Focus Colors */
 .section-headline-link a:focus, .section-headline-link a:hover, .main-container .region.region-content section.block-views .view-content a:focus, .main-container .region.region-content section.block-views .view-content a:hover {
@@ -124,6 +140,7 @@ h1 {
 }
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
+  text-transform: capitalize;
 }
 header.navbar {
   /*background-color: #FFFFFF;
@@ -187,6 +204,11 @@ header.navbar {
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
   background-color: transparent;
   color: #4A4949;
+}
+
+.page-calendar .nav-tabs > li > a:hover, .page-calendar .nav-tabs > li > a:focus {
+  border-color: transparent;
+  background-color: rgba(0,0,0,.10);
 }
 
 .navbar #block-search-form {
@@ -264,7 +286,7 @@ section.gold .more-link a {
 section.blue .more-link a {
   color: #478cc0;
 }
-.main-container .region.region-content section.block-views .view-content a {
+.main-container .region.region-content section.listBlock .view-content a {
   color: #4a4949;
   border-bottom: 1px dotted #4a4949;
   padding: 15px 0 15px 20px;
@@ -333,6 +355,7 @@ section.block #mc-embedded-subscribe {
 }
 .region-footer section:nth-child(1) {
   padding-left: 0px;
+  margin-bottom: 30px;
 }
 .region-footer section:nth-child(7) {
   padding-right: 0px;
@@ -371,6 +394,10 @@ footer .site-name h2.block-title, footer .site-name h3 {
 .view-frontpage .view-content > div.col-sm-4.col-md-2 {
   margin: 0 0 30px;
 }
+.view-photo-album-list .view-content > div {
+  min-height: 160px;
+}
+
  @media (min-width:992px) and (max-width: 1024px) {
 /* Font sizes */
 body {
@@ -390,6 +417,8 @@ body {
 section.inset-shadow.bkg-hot-pink {
   margin-left: 15px;
   max-width: 350px;
+  /*min-height: 412px;*/
+  max-height: 412px;
 }
 }
 @media (max-width:991px) {

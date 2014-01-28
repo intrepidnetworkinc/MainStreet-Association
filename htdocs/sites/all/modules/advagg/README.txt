@@ -9,6 +9,7 @@ CONTENTS OF THIS FILE
 
  * Features & benefits
  * Configuration
+ * JSMin PHP Extension
  * JavaScript Bookmarklet
  * Technical Details & Hooks
  * nginx Configuration
@@ -34,7 +35,8 @@ Advanced CSS/JS Aggregation core features:
  * Url query string to turn off aggregation for that request. ?advagg=0 will
    turn off file aggregation if the user has the "bypass advanced aggregation"
    permission. ?advagg=-1 will completely bypass all of Advanced CSS/JS
-   Aggregations modules and submodules.
+   Aggregations modules and submodules. ?advagg=1 will enable Advanced CSS/JS
+   Aggregation if it is currently disabled.
  * Button on the admin page for dropping a cookie that will turn off file
    aggregation. Useful for theme development.
  * Gzip support. All aggregated files can be pre-compressed into a .gz file and
@@ -63,7 +65,8 @@ Included submodules:
    * Inline all CSS/JS for given paths.
    * Use a shared directory for a unified multisite.
  * advagg_validator:
-   Validate all root CSS files using jigsaw.w3.org.
+   Validate all CSS files using jigsaw.w3.org. Check all CSS files with CSSLint.
+   Check all JS files with JSHint.
 
 
 CONFIGURATION
@@ -141,6 +144,14 @@ settings.php. In general they are settings that should not be changed.
     // Run advagg_url_inbound_alter().
     $conf['advagg_url_inbound_alter'] = TRUE;
 
+    // Allow JavaScript insertion into any scope even if theme does not support
+    // it.
+    $conf['advagg_scripts_scope_anywhere'] = FALSE;
+
+    // Empty the scripts key inside of template_process_html replacement
+    // function.
+    $conf['advagg_scripts_scope_anywhere'] = FALSE;
+
     // Set the jQuery UI version.
     $conf['advagg_css_cdn_jquery_ui_version'] = '1.8.7';
 
@@ -167,6 +178,16 @@ settings.php. In general they are settings that should not be changed.
 
     // Value for the compression ratio test.
     $conf['advagg_js_compress_ratio'] = 0.1;
+
+
+JSMIN PHP EXTENSION
+-------------------
+
+The AdvAgg JS Compress module can take advantage of jsmin.c. JavaScript parsing
+and minimizing will be done in C instead of PHP dramatically speeding up the
+process. If using PHP 5.3.10 or higher https://github.com/sqmk/pecl-jsmin is
+recommended. If using PHP 5.3.9 or lower
+http://www.ypass.net/software/php_jsmin/ is recommended.
 
 
 JAVASCRIPT BOOKMARKLET
@@ -198,6 +219,15 @@ Technical Details:
    The third base64 hash value records what settings were used when generating
    the aggregate. Changing a setting that affects how aggregates get built
    (like toggling "Create .gz files") will change this value.
+
+ * To trigger scanning of the CSS / JS file cache to identify new files, run
+   the following:
+
+      // Trigger reloading the CSS and JS file cache in AdvAgg.
+      if (module_exists('advagg')) {
+        module_load_include('inc', 'advagg', 'advagg.cache');
+        advagg_push_new_changes();
+      }
 
 Hooks:
 
@@ -238,16 +268,18 @@ NGINX CONFIGURATION
 -------------------
 
 http://drupal.org/node/1116618
+Note that @drupal might be @rewrite depending on your servers configuration.
 
     ###
     ### advagg_css and advagg_js support
     ###
     location ~* files/advagg_(?:css|js)/ {
-      access_log off;
-      expires    max;
-      add_header ETag "";
-      add_header Cache-Control "max-age=290304000, no-transform, public";
-      try_files  $uri @drupal;
+      gzip_static on;
+      access_log  off;
+      expires     max;
+      add_header  ETag "";
+      add_header  Cache-Control "max-age=31449600, no-transform, public";
+      try_files   $uri @drupal;
     }
 
 
@@ -264,3 +296,65 @@ to this:
 Similarly, if the Fast_404 module is enabled, the 'fast_404_string_whitelisting'
 variable must be set inside of settings.php. Add this to your settings.php file:
     $conf['fast_404_string_whitelisting'][] = '/advagg_';
+
+
+Modules like the Central Authentication Services https://drupal.org/project/cas
+will redirect all anonymous requests to a login page. Most of the time there is
+a setting that allows certian pages to be excluded from the redirect. You should
+add the following to those exclusions. Note that sites/default/files is the
+location of you public file system (public://) so you might have to adjust this
+to fit your setup. services/* is the default (CAS_EXCLUDE) and
+httprl_async_function_callback is needed if httprl will be used.
+    services/*
+    sites/default/files/advagg_css/*
+    sites/default/files/advagg_js/*
+    httprl_async_function_callback
+
+In the example of CAS this setting can be found on the admin/config/people/cas
+page and under Redirection there should be a setting called "Excluded Pages".
+
+
+If Far-Future headers are not being sent out and you are using Apache here are
+some tips to hopefully get it working. For Apache enable mod_rewrite,
+mod_headers, and mod_expires. Add the following code to the bottom of Drupal's
+core .htaccess file (located at the webroot level).
+
+    <FilesMatch "^(css|js)__[A-Za-z0-9-_]{43}__[A-Za-z0-9-_]{43}__[A-Za-z0-9-_]{43}.(css|js)(\.gz)?">
+      # No mod_headers
+      <IfModule !mod_headers.c>
+        # No mod_expires
+        <IfModule !mod_expires.c>
+          # Use ETags.
+          FileETag MTime Size
+        </IfModule>
+      </IfModule>
+
+      # Use Expires Directive.
+      <IfModule mod_expires.c>
+        # Do not use ETags.
+        FileETag None
+        # Enable expirations.
+        ExpiresActive On
+        # Cache all aggregated css/js files for 52 weeks after access (A).
+        ExpiresDefault A31449600
+      </IfModule>
+
+      <IfModule mod_headers.c>
+        # Do not use etags for cache validation.
+        Header unset ETag
+        <IfModule !mod_expires.c>
+          # Set a far future Cache-Control header to 52 weeks.
+          Header set Cache-Control "max-age=31449600, no-transform, public"
+        </IfModule>
+        <IfModule mod_expires.c>
+          Header append Cache-Control "no-transform, public"
+        </IfModule>
+      </IfModule>
+    </FilesMatch>
+
+
+If pages on the site stop working correctly or looks broken after Advanced
+CSS/JS Aggregation is enabled, the first step should be to validate the
+individual CSS and/or JS files using the included advagg_validator module -
+something as simple as an errant unfinished comment in one file may cause entire
+files to be ignored.

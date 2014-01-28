@@ -36,19 +36,21 @@ function advagg_insert_update_db($files, $type, $root) {
       continue;
     }
 
-    // Insert aggregate version information into advagg_aggregates_versions.
-    // If it already exists, skip the rest of the logic in this loop.
-    if (advagg_insert_aggregate_version($values['aggregate_filenames_hash'], $values['aggregate_contents_hash'], $root) == FALSE) {
-      continue;
-    }
-    $write_done = TRUE;
-
     // Insert files into the advagg_files table if it doesn't exist.
     // Update if needed.
-    advagg_insert_update_files($values['files'], $type);
+    if (advagg_insert_update_files($values['files'], $type)) {
+      $write_done = TRUE;
+    }
 
     // Insert aggregate into the advagg_aggregates table if it doesn't exist.
-    advagg_insert_aggregate($values['files'], $values['aggregate_filenames_hash']);
+    if (advagg_insert_aggregate($values['files'], $values['aggregate_filenames_hash'])) {
+      $write_done = TRUE;
+    }
+
+    // Insert aggregate version information into advagg_aggregates_versions.
+    if (advagg_insert_aggregate_version($values['aggregate_filenames_hash'], $values['aggregate_contents_hash'], $root)) {
+      $write_done = TRUE;
+    }
 
     // Release Lock.
     lock_release($lock_name);
@@ -315,7 +317,7 @@ function advagg_get_info_on_file($filename, $bypass_cache = FALSE) {
       return $filename_hashes[$cache_id];
     }
 
-    // Try cache backend next.
+    // Try cache back-end next.
     $cache = cache_get($cache_id, 'cache_advagg_info');
     if (!empty($cache->data)) {
       return $cache->data;
@@ -455,7 +457,7 @@ function advagg_generate_groups($files_to_aggregate) {
         $changed = FALSE;
         if (variable_get('advagg_ie_css_selector_limiter', ADVAGG_IE_CSS_SELECTOR_LIMITER)) {
           $file_info += advagg_get_info_on_file($file_info['data']);
-          // Prevent CSS rules exceding 4095 due to limits with IE9 and below.
+          // Prevent CSS rules exceeding 4095 due to limits with IE9 and below.
           $ext = isset($file_info['fileext']) ? $file_info['fileext'] : pathinfo($file_info['data'], PATHINFO_EXTENSION);
           if ($ext == 'css') {
             $selector_count += $file_info['linecount'];
@@ -612,13 +614,7 @@ function advagg_build_aggregate_plans($files_to_aggregate, $type) {
 function advagg_create_aggregate_files($plans) {
   $filenames = array();
   foreach ($plans as $plan) {
-    // Use cache here?
-    if (!file_exists($plan['filepath'])) {
-      $filenames[] = $plan['filename'];
-    }
-  }
-  if (empty($filenames)) {
-    return;
+    $filenames[] = $plan['filename'];
   }
 
   // If the httprl module exists and we want to use it.
@@ -661,47 +657,72 @@ function advagg_create_aggregate_files($plans) {
  *   Contents of the stylesheet, including any resolved @import commands.
  */
 function advagg_load_css_stylesheet($file, $optimize, $aggregate_settings = NULL) {
+  // Change context to that of when this aggregate was created.
+  advagg_context_css($aggregate_settings, 0);
+
+  // Get the stylesheets contents.
+  $contents = drupal_load_stylesheet($file, $optimize);
+
+  // Get the parent directory of this file, relative to the Drupal root.
+  $css_base_url = substr($file, 0, strrpos($file, '/'));
+  _advagg_build_css_path(NULL, $css_base_url . '/');
+
+  // Anchor all paths in the CSS with its base URL, ignoring external and absolute paths.
+  $contents = preg_replace_callback('/url\(\s*[\'"]?(?![a-z]+:|\/+)([^\'")]+)[\'"]?\s*\)/i', '_advagg_build_css_path', $contents);
+
+  // Change context back.
+  advagg_context_css($aggregate_settings, 1);
+
+  // Return the stylesheets contents.
+  return $contents;
+}
+
+/**
+ * Changes context when generating CSS.
+ *
+ * @param $aggregate_settings
+ *   array of settings.
+ * @param $mode
+ *   0 to change context to what is inside of $aggregate_settings.
+ *   1 to change context back.
+ */
+function advagg_context_css($aggregate_settings, $mode) {
+  $original = &drupal_static(__FUNCTION__);
+
   // Use current $aggregate_settings if none was passed in.
   if (is_null($aggregate_settings)) {
     $aggregate_settings = advagg_current_hooks_hash_array();
   }
 
-  // Set http/https context.
-  $orginal_base_root = $GLOBALS['base_root'];
-  $orginal_base_url = $GLOBALS['base_url'];
-  $orginal_is_https = $GLOBALS['is_https'];
-  $GLOBALS['is_https'] = $aggregate_settings['variables']['is_https'];
-  if ($aggregate_settings['variables']['is_https']) {
-    $GLOBALS['base_root'] = str_replace('http://', 'https://', $GLOBALS['base_root']);
-    $GLOBALS['base_url'] = str_replace('http://', 'https://', $GLOBALS['base_url']);
-  }
-  else {
-    $GLOBALS['base_root'] = str_replace('https://', 'http://', $GLOBALS['base_root']);
-    $GLOBALS['base_url'] = str_replace('https://', 'http://', $GLOBALS['base_url']);
-  }
+  // Call hook_advagg_context_alter().
+  drupal_alter('advagg_context', $original, $aggregate_settings, $mode);
+}
 
-  // Get the stylesheets contents.
-  $contents = drupal_load_stylesheet($file, $optimize);
-
-  // Build the base URL of this CSS file: start with the full URL.
-  $css_base_url = file_create_url($file);
-  // Move to the parent.
-  $css_base_url = substr($css_base_url, 0, strrpos($css_base_url, '/'));
-  // Simplify to a relative URL if the stylesheet URL starts with the
-  // base URL of the website.
-  if (substr($css_base_url, 0, strlen($GLOBALS['base_root'])) == $GLOBALS['base_root']) {
-    $css_base_url = substr($css_base_url, strlen($GLOBALS['base_root']));
+/**
+ * Prefixes all paths within a CSS file for drupal_build_css_cache().
+ *
+ * @see _drupal_build_css_path()
+ * @see https://drupal.org/node/1961340#comment-7735815
+ * @see https://drupal.org/node/1514182#comment-7875489
+ */
+function _advagg_build_css_path($matches, $base = NULL) {
+  $_base = &drupal_static(__FUNCTION__);
+  // Store base path for preg_replace_callback.
+  if (isset($base)) {
+    $_base = $base;
   }
 
-  _drupal_build_css_path(NULL, $css_base_url . '/');
-  // Anchor all paths in the CSS with its base URL, ignoring external and absolute paths.
-  $contents = preg_replace_callback('/url\(\s*[\'"]?(?![a-z]+:|\/+)([^\'")]+)[\'"]?\s*\)/i', '_drupal_build_css_path', $contents);
+  // Prefix with base and remove '../' segments where possible.
+  $path = $_base . $matches[1];
+  $last = '';
+  while ($path != $last) {
+    $last = $path;
+    $path = preg_replace('`(^|/)(?!\.\./)([^/]+)/\.\./`', '$1', $path);
+  }
 
-  // Set the http/https context back.
-  $GLOBALS['base_root'] = $orginal_base_root;
-  $GLOBALS['base_url'] = $orginal_base_url;
-  $GLOBALS['is_https'] = $orginal_is_https;
-
-  // Return the stylesheets contents.
-  return $contents;
+  $path = file_create_url($path);
+  // Decoding path because some browsers can not handle encoded urls inside of
+  // CSS. file_create_url() -> drupal_encode_path() -> rawurlencode().
+  $path = rawurldecode($path);
+  return 'url(' . $path . ')';
 }
