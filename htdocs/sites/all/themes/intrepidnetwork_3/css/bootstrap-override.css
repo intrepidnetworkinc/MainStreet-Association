@@ -40,34 +40,11 @@ a:hover, a:focus {
 .btn-sm, .btn-xs {
   font-weight: bold;
 }
-section.block-block, .node-community-group .col-sm-12 {
-  display: inline-block;
-}
 .nav .open > a, .nav .open > a:focus, .nav .open > a:hover {
   background-color: transparent;
   border-color: transparent;
 }
-/*.dropdown-menu {
-  background-clip: padding-box;
-  background-color: #51A7B3;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 0px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.176);*/
-  /*display: none;*/
-  /*float: left;
-  font-size: 14px;
-  left: 0;
-  list-style: none outside none;
-  margin: 2px 0 0;
-  min-width: 160px;
-  padding: 5px 0;
-  position: absolute;
-  top: 100%;
-  z-index: 1000;
-}*/
 .navbar-nav > li > .dropdown-menu {
-  /*background-clip: padding-box;
-  background-color: #51A7B3;*/
   border: 0px solid rgba(0, 0, 0, 0.15);
   border-radius: 5px;
 }
@@ -338,7 +315,7 @@ ol.search-results.node-results {
 }
 li.search-result, .listBottomBorder {
   list-style-type: none;
-  border-bottom: 1px dotted #4A4949;
+  border-bottom: 1px dotted rgba(0,0,0,.25);
   color: #4A4949;
   display: block;
   padding: 15px 0 15px 0;
@@ -358,8 +335,43 @@ object#webcam_holder {
 .page-resources h2 a {
   color: #5CA7C7;
 }
- @media (min-width:1200px) {
+.page-media .pagination > .active > a, .page-media .pagination > .active > span, .page-media .pagination > .active > a:hover, .pagination > .active > span:hover, .page-media .pagination > .active > a:focus, .page-media .pagination > .active > span:focus {
+  background-color: #3D3AAD;
+  border-color: #3D3AAD;
+}
+.list-inline > li.calendar_link {
+  display: none;
+}
+footer address {
+  line-height: 27px;
+}
+footer .block h2.block-title {
+    margin: 0 0 5px;
+}
+@media (min-width:1200px) {
 .navbar-fixed-top nav {
   position: relative;
 }
+}
+@media (max-width:767px) {
+/*.navbar-fixed-top {
+  position: relative;
+}*/
+.navbar-nav > li > .dropdown-menu {
+  border-radius: 0px;
+}
+.navbar-default .navbar-nav .open .dropdown-menu > li > a, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus, .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover {
+  color: #fff;
+}
+.navbar-nav .open .dropdown-menu {
+  margin-top: -2px;
+}
+.navbar-nav > li > .dropdown-menu:after {
+  border-width: 0px;
+}
+}
+@media (max-width:480px) {
+.thumbnail {
+  background-color: rgba(0, 0, 0, 0);
+}  
 }

@@ -8,3 +8,9 @@
 .simplead-container.image-ad.last {
   margin-bottom: 0px;
 }
+
+@media (max-width:480px){ 
+.simplead-container.image-ad img {
+  width: 100%;
+}
+}
