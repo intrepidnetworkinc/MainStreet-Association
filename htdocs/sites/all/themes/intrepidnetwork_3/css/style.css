@@ -144,9 +144,6 @@ button.glow-wht:focus, button.glow-wht:hover, .glow-wht li a:hover {
   -webkit-box-shadow: 0px 0px 8px 0px rgba(81, 167, 179, .8);
   box-shadow: 0px 0px 8px 0px rgba(81, 167, 179, .8);
 }
-body, body.admin-menu {
-  padding-top: 150px !important;
-}
 body.imce {
   padding-top: 0 !important;
 }
@@ -526,7 +523,7 @@ body {
   margin: 30px 0;
 }
 }
-/* Small devices Tablets (>= 768px) */
+/* Small devices Tablets (>= 768px < 992px ) */
 @media (min-width:768px) and (max-width:991px) {
 /* Font sizes */
 body {
@@ -584,10 +581,19 @@ footer > div > div > section:nth-child(2), footer > div > div > section:nth-chil
   min-height:225px;
 }
 }*/
+/* Small devices Tablets (>= 768px) */
+@media (min-width:768px) {
+/*body, body.admin-menu*/ .main-container {
+  padding-top: 150px !important;
+}
+.col-sm-pull-left {
+  float: left;
+}
+}
 /* Extra small devices Phones (<768px) */
 @media (max-width:767px) {
-body, body.admin-menu {
-  padding-top: 55px !important;
+/*body, body.admin-menu*/ .main-container {
+  padding-top: 0px !important;
 }
 /* Font sizes */
 body {
@@ -608,10 +614,6 @@ header.navbar {
 .logo img {
   width: 100%;
   max-width: 215px;
-}
-.navbar-toggle {
-  background-color: #fff;
-  margin-right: 30px;
 }
 /*.navbar #block-search-form {
   right: 270px;
@@ -692,13 +694,19 @@ footer section:nth-child(7).block h2.block-title {
 .legal.col-xs-12 {
   padding-left: 35px;
 }
+.col-xs-pull-left {
+  float: left;
+}
 }
 @media (max-width:480px) {
 /*html {
   font-size: 100%;
 }*/
-h1 {
-  font-size: 36px;
+.main-container .block-title-link, .more-link a {
+  font-size: 20px;
+}
+.block-title-link .first-word, .more-link a .first-word {
+  font-size: 19px;
 }
 .beach-cam {
   display: none;
@@ -706,9 +714,8 @@ h1 {
 .topMargin30 {
   margin-top: 10px;
 }
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
-  padding-left: 5px;
-  padding-right: 5px;
+.bottomMargin30 {
+  margin-bottom: 10px;
 }
 .navbar .logo {
   padding-left: 20px;
