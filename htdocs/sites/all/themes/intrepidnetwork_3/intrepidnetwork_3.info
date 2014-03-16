@@ -15,6 +15,7 @@ regions[footer]         = 'Footer'
 
 ; Stylesheets
 stylesheets[all][] = css/bootstrap-override.css
+stylesheets[all][] = css/calendar-override.css
 stylesheets[all][] = css/style.css
 stylesheets[all][] = css/flexslider-override.css
 stylesheets[all][] = css/ubercart_style.css

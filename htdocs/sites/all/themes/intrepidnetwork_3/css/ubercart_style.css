@@ -6,24 +6,83 @@
 .form-control {
   padding: 1px 4px;
 }
-
 .view-uc-catalog-terms .view-content > div a:nth-child(1) {
   display: block;
   min-height: 110px;
   text-align: center;
 }
-
 .view-uc-catalog-terms .view-content > div a:nth-child(1) img {
   max-width: 100%;
 }
-
 .view-uc-catalog-terms .view-content > div a:nth-child(2) {
-  background-color: #51A7B3;
-  color: #FFFFFF;
+  background-color: transparent;
+  color: #333;
   display: block;
   font-weight: bold;
   margin-bottom: 30px;
   min-height: 90px;
   padding: 5px;
   text-align: center;
+}
+.node-product.node-teaser .node-readmore {
+  display:none;
+}
+.cart-block-summary {
+  float: right;
+}
+
+/* test */
+
+.more-product-images a img {
+  padding: 2px;
+  margin: 2px;
+  border: 1px solid #ccc;
+}
+
+#edit-update {
+  margin-left: 0.5em;
+}
+
+#edit-checkout--2.btn-default {
+  background-color: #38B449;
+  border-color: rgba(0, 0, 0, 0);
+  color: #FFFFFF;
+  float: right;
+}
+
+#edit-checkout--2.btn-default:hover, #edit-checkout--2.btn-default:focus, #edit-checkout--2.btn-default:active {
+  background-color: #47a447;
+  border-color: rgba(0, 0, 0, 0);
+  color: #FFFFFF;
+}
+
+.form-control.form-wrapper {
+  border: 0 solid #CCCCCC;
+  box-shadow: none;
+  height: auto;
+}
+
+.uc-store-address-field .form-item label {
+  width: auto;
+}
+
+ul.catalog, ul.catalog ul.menu {
+  padding-left: 0px;
+}
+
+ul.catalog > li > a, ul.catalog > li > span > a {
+  padding: 5px 10px;
+  display: block;
+}
+
+ul.catalog > li > ul.menu > li a  {
+  padding-left: 20px;
+}
+
+/*ul.catalog ul.menu > li.expanded > ul > li  {
+  padding-left: 30px;
+}*/
+
+.uc-catalog > .view-content > div, .view-frontpage .view-content > div {
+  margin-bottom: 30px;
 }

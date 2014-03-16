@@ -4,12 +4,25 @@
 .simplead-container.image-ad {
   margin-bottom: 30px;
 }
-
 .simplead-container.image-ad.last {
   margin-bottom: 0px;
 }
-
-@media (max-width:480px){ 
+@media (min-width:768px) and (max-width:991px){
+.simplead-container.image-ad {
+  float: left;
+  margin-bottom: 30px;
+  max-width: 50%;
+  padding: 0 10px;
+}
+.simplead-container.image-ad img {
+  max-width: 100%;
+  height: auto;
+}
+}
+@media (max-width:480px){
+.simplead-container.image-ad {
+  margin-bottom: 10px;
+}
 .simplead-container.image-ad img {
   width: 100%;
 }
