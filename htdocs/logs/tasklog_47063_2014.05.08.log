@@ -1,0 +1,517 @@
+
+  Command to be executed is:  /usr/bin/curl http://www.oceanbeachsandiego.com/cron.php
+ Task ID of this command is:  47063
+Where should log be written:  /mnt/stor9-wc2-dfw1/484947/532128/www.oceanbeachsandiego.com/logs
+		 Start time: Thu May  8 00:03:54 CDT 2014
+              Email address:  Notification Disabled
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:03 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:04 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:05 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:06 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:07 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:08 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:09 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:10 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:11 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:12 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:13 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:14 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:15 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:16 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:17 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:18 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:19 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:20 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:21 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:22 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:23 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:24 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:25 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:26 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:27 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:28 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:29 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:30 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:30 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:30 --:--:--     0
+curl: (52) Empty reply from server
+
+  Command to be executed is:  /usr/bin/curl http://www.oceanbeachsandiego.com/cron.php
+ Task ID of this command is:  47063
+Where should log be written:  /mnt/stor9-wc2-dfw1/484947/532128/www.oceanbeachsandiego.com/logs
+		 Start time: Thu May  8 01:02:45 CDT 2014
+              Email address:  Notification Disabled
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:03 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:04 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:05 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:06 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:07 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:08 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:09 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:10 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:11 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:12 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:13 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:14 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:15 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:16 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:17 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:18 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:19 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:20 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:21 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:22 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:23 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:24 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:25 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:26 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:27 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:28 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:29 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:30 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:30 --:--:--     0
+curl: (52) Empty reply from server
+
+  Command to be executed is:  /usr/bin/curl http://www.oceanbeachsandiego.com/cron.php
+ Task ID of this command is:  47063
+Where should log be written:  /mnt/stor9-wc2-dfw1/484947/532128/www.oceanbeachsandiego.com/logs
+		 Start time: Thu May  8 02:00:43 CDT 2014
+              Email address:  Notification Disabled
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:03 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:04 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:05 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:06 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:06 --:--:--     0
+
+  Command to be executed is:  /usr/bin/curl http://www.oceanbeachsandiego.com/cron.php
+ Task ID of this command is:  47063
+Where should log be written:  /mnt/stor9-wc2-dfw1/484947/532128/www.oceanbeachsandiego.com/logs
+		 Start time: Thu May  8 03:02:24 CDT 2014
+              Email address:  Notification Disabled
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0
+
+  Command to be executed is:  /usr/bin/curl http://www.oceanbeachsandiego.com/cron.php
+ Task ID of this command is:  47063
+Where should log be written:  /mnt/stor9-wc2-dfw1/484947/532128/www.oceanbeachsandiego.com/logs
+		 Start time: Thu May  8 04:02:27 CDT 2014
+              Email address:  Notification Disabled
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:03 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:04 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:05 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:06 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:07 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:08 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:09 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:10 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:11 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:12 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:13 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:14 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:15 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:16 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:17 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:18 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:19 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:20 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:21 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:22 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:23 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:24 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:25 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:26 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:27 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:28 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:29 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:29 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:29 --:--:--     0
+curl: (52) Empty reply from server
+
+  Command to be executed is:  /usr/bin/curl http://www.oceanbeachsandiego.com/cron.php
+ Task ID of this command is:  47063
+Where should log be written:  /mnt/stor9-wc2-dfw1/484947/532128/www.oceanbeachsandiego.com/logs
+		 Start time: Thu May  8 05:04:57 CDT 2014
+              Email address:  Notification Disabled
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:03 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:04 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:05 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:06 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:07 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:08 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:09 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:10 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:11 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:12 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:13 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:14 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:15 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:16 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:17 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:18 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:19 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:20 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:21 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:22 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:23 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:24 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:25 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:26 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:27 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:28 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:29 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:30 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:30 --:--:--     0
+curl: (52) Empty reply from server
+
+  Command to be executed is:  /usr/bin/curl http://www.oceanbeachsandiego.com/cron.php
+ Task ID of this command is:  47063
+Where should log be written:  /mnt/stor9-wc2-dfw1/484947/532128/www.oceanbeachsandiego.com/logs
+		 Start time: Thu May  8 06:00:23 CDT 2014
+              Email address:  Notification Disabled
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:03 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:04 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:05 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:06 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:07 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:08 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:09 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:10 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:11 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:12 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:13 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:14 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:15 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:16 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:17 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:18 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:19 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:20 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:21 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:22 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:23 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:24 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:25 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:26 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:27 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:28 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:29 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:30 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:31 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:31 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:31 --:--:--     0
+curl: (52) Empty reply from server
+
+  Command to be executed is:  /usr/bin/curl http://www.oceanbeachsandiego.com/cron.php
+ Task ID of this command is:  47063
+Where should log be written:  /mnt/stor9-wc2-dfw1/484947/532128/www.oceanbeachsandiego.com/logs
+		 Start time: Thu May  8 07:03:07 CDT 2014
+              Email address:  Notification Disabled
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:03 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:04 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:05 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:06 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:07 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:08 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:09 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:10 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:11 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:12 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:13 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:14 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:15 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:16 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:17 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:18 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:19 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:20 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:21 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:22 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:23 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:24 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:25 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:26 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:27 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:28 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:29 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:30 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:31 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:31 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:31 --:--:--     0
+curl: (52) Empty reply from server
+
+  Command to be executed is:  /usr/bin/curl http://www.oceanbeachsandiego.com/cron.php
+ Task ID of this command is:  47063
+Where should log be written:  /mnt/stor9-wc2-dfw1/484947/532128/www.oceanbeachsandiego.com/logs
+		 Start time: Thu May  8 08:01:18 CDT 2014
+              Email address:  Notification Disabled
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:03 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:04 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:05 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:06 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:07 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:08 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:09 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:10 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:11 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:12 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:13 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:14 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:15 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:16 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:17 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:18 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:19 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:20 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:21 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:22 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:23 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:24 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:25 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:26 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:27 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:28 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:29 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:30 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:30 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:30 --:--:--     0
+curl: (52) Empty reply from server
+
+  Command to be executed is:  /usr/bin/curl http://www.oceanbeachsandiego.com/cron.php
+ Task ID of this command is:  47063
+Where should log be written:  /mnt/stor9-wc2-dfw1/484947/532128/www.oceanbeachsandiego.com/logs
+		 Start time: Thu May  8 09:01:41 CDT 2014
+              Email address:  Notification Disabled
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0100  2205    0  2205    0     0   1192      0 --:--:--  0:00:01 --:--:--  3088<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
+  "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html lang="en" dir="ltr"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:dc="http://purl.org/dc/terms/"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:og="http://ogp.me/ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:sioc="http://rdfs.org/sioc/ns#"
+  xmlns:sioct="http://rdfs.org/sioc/types#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+<head profile="http://www.w3.org/1999/xhtml/vocab">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+<link rel="shortcut icon" href="http://www.oceanbeachsandiego.com/sites/default/files/ocean-beach-san-diego_1.ico" />
+<meta name="description" content="The Ocean Beach MainStreet Association welcomes you to our beautiful and historic business district.   Here you will find unique shops and restaurants, beautiful beaches, great surf, and fun for the whole family." />
+<meta name="keywords" content="Vacation in San Diego,Southern California Vacation,Ocean Beach San Diego,OB,Surfing,Farmers Market,Street Fair,Chili Cook Off,Oktober Fest,Jazz Fest,OB Beach Ba" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+  <title>OBMA | Where the Sun Sets on San Diego</title>
+  <style>@import url("http://www.oceanbeachsandiego.com/modules/system/system.base.css?n59d4a");</style>
+<style>@import url("http://www.oceanbeachsandiego.com/sites/all/modules/calendar/css/calendar_multiday.css?n59d4a");@import url("http://www.oceanbeachsandiego.com/sites/all/modules/date/date_api/date.css?n59d4a");@import url("http://www.oceanbeachsandiego.com/sites/all/modules/date/date_popup/themes/datepicker.1.7.css?n59d4a");@import url("http://www.oceanbeachsandiego.com/sites/all/modules/date/date_repeat_field/date_repeat_field.css?n59d4a");@import url("http://www.oceanbeachsandiego.com/modules/field/theme/field.css?n59d4a");@import url("http://www.oceanbeachsandiego.com/sites/all/modules/google_analytics_reports/google_analytics_reports/google_analytics_reports.css?n59d4a");@import url("http://www.oceanbeachsandiego.com/sites/all/modules/mollom/mollom.css?n59d4a");@import url("http://www.oceanbeachsandiego.com/sites/all/modules/simpleads/simpleads.css?n59d4a");@import url("http://www.oceanbeachsandiego.com/sites/all/modules/ubercart/uc_file/uc_file.css?n59d4a");@import url("http://www.oceanbeachsandiego.com/sites/all/modules/ubercart/uc_order/uc_order.css?n59d4a");@import url("http://www.oceanbeachsandiego.com/sites/all/modules/ubercart/uc_product/uc_product.css?n59d4a");@import url("http://www.oceanbeachsandiego.com/sites/all/modules/ubercart/uc_store/uc_store.css?n59d4a");@import url("http://www.oceanbeachsandiego.com/sites/all/modules/views/css/views.css?n59d4a");</style>
+<style>@import url("http://www.oceanbeachsandiego.com/sites/all/modules/colorbox/styles/default/colorbox_style.css?n59d4a");@import url("http://www.oceanbeachsandiego.com/sites/all/modules/ctools/css/ctools.css?n59d4a");@import url("http://www.oceanbeachsandiego.com/sites/all/modules/custom_search/custom_search.css?n59d4a");@import url("http://www.oceanbeachsandiego.com/sites/all/modules/flexslider/assets/css/flexslider_img.css?n59d4a");@import url("http://www.oceanbeachsandiego.com/sites/all/libraries/flexslider/flexslider.css?n59d4a");</style>
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" media="all" />
+<style>@import url("http://www.oceanbeachsandiego.com/sites/all/themes/bootstrap/css/overrides.css?n59d4a");@import url("http://www.oceanbeachsandiego.com/sites/all/themes/intrepidnetwork_3/css/bootstrap-override.css?n59d4a");@import url("http://www.oceanbeachsandiego.com/sites/all/themes/intrepidnetwork_3/css/calendar-override.css?n59d4a");@import url("http://www.oceanbeachsandiego.com/sites/all/themes/intrepidnetwork_3/css/style.css?n59d4a");@import url("http://www.oceanbeachsandiego.com/sites/all/themes/intrepidnetwork_3/css/flexslider-override.css?n59d4a");@import url("http://www.oceanbeachsandiego.com/sites/all/themes/intrepidnetwork_3/css/ubercart_style.css?n59d4a");@import url("http://www.oceanbeachsandiego.com/sites/all/themes/intrepidnetwork_3/css/simplead.css?n59d4a");</style>
+  <!-- HTML5 element support for IE6-8 -->
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script>window.jQuery || document.write("<script src='/sites/all/modules/jquery_update/replace/jquery/1.7/jquery.min.js'>\x3C/script>")</script>
+<script src="http://www.oceanbeachsandiego.com/misc/jquery.once.js?v=1.2"></script>
+<script src="http://www.oceanbeachsandiego.com/misc/drupal.js?n59d4a"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+<script src="http://www.oceanbeachsandiego.com/sites/all/modules/google_analytics_reports/google_analytics_reports/google_analytics_reports.js?n59d4a"></script>
+<script src="http://www.oceanbeachsandiego.com/sites/all/modules/simpleads/simpleads.js?n59d4a"></script>
+<script src="http://www.oceanbeachsandiego.com/sites/all/modules/simpleads/modules/simpleads_campaigns/simpleads_campaigns.js?n59d4a"></script>
+<script src="http://www.oceanbeachsandiego.com/sites/all/modules/ubercart/uc_file/uc_file.js?n59d4a"></script>
+<script src="http://www.oceanbeachsandiego.com/sites/all/libraries/colorbox/jquery.colorbox-min.js?n59d4a"></script>
+<script src="http://www.oceanbeachsandiego.com/sites/all/modules/colorbox/js/colorbox.js?n59d4a"></script>
+<script src="http://www.oceanbeachsandiego.com/sites/all/modules/colorbox/styles/default/colorbox_style.js?n59d4a"></script>
+<script src="http://www.oceanbeachsandiego.com/sites/all/modules/custom_search/js/custom_search.js?n59d4a"></script>
+<script src="http://www.oceanbeachsandiego.com/sites/all/modules/google_analytics/googleanalytics.js?n59d4a"></script>
+<script>var _gaq = _gaq || [];_gaq.push(["_setAccount", "UA-5034278-24"]);_gaq.push(["_trackPageview", "/403.html?page=" + document.location.pathname + document.location.search + "&from=" + document.referrer]);(function() {var ga = document.createElement("script");ga.type = "text/javascript";ga.async = true;ga.src = ("https:" == document.location.protocol ? "https://" : "http://") + "stats.g.doubleclick.net/dc.js";var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(ga, s);})();</script>
+<script src="http://www.oceanbeachsandiego.com/sites/all/libraries/flexslider/jquery.flexslider-min.js?n59d4a"></script>
+<script src="http://www.oceanbeachsandiego.com/sites/all/themes/intrepidnetwork_3/js/jquery.styleWords.min.js?n59d4a"></script>
+<script src="http://www.oceanbeachsandiego.com/sites/all/themes/intrepidnetwork_3/js/intrepidnetwork_style.js?n59d4a"></script>
+<script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","ajaxPageState":{"theme":"intrepidnetwork_3","theme_token":"AQFHR2xt7C2lROgysWdxXr6X2gYXhbBIL6Hd-2OnCMA","js":{"sites\/all\/modules\/flexslider\/assets\/js\/flexslider.load.js":1,"sites\/all\/themes\/bootstrap\/js\/bootstrap.js":1,"http:\/\/code.jquery.com\/jquery-1.7.1.min.js":1,"0":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"\/\/netdna.bootstrapcdn.com\/bootstrap\/3.0.2\/js\/bootstrap.min.js":1,"sites\/all\/modules\/google_analytics_reports\/google_analytics_reports\/google_analytics_reports.js":1,"sites\/all\/modules\/simpleads\/simpleads.js":1,"sites\/all\/modules\/simpleads\/modules\/simpleads_campaigns\/simpleads_campaigns.js":1,"sites\/all\/modules\/ubercart\/uc_file\/uc_file.js":1,"sites\/all\/libraries\/colorbox\/jquery.colorbox-min.js":1,"sites\/all\/modules\/colorbox\/js\/colorbox.js":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.js":1,"sites\/all\/modules\/custom_search\/js\/custom_search.js":1,"sites\/all\/modules\/google_analytics\/googleanalytics.js":1,"1":1,"sites\/all\/libraries\/flexslider\/jquery.flexslider-min.js":1,"sites\/all\/themes\/intrepidnetwork_3\/js\/jquery.styleWords.min.js":1,"sites\/all\/themes\/intrepidnetwork_3\/js\/intrepidnetwork_style.js":1},"css":{"modules\/system\/system.base.css":1,"sites\/all\/modules\/calendar\/css\/calendar_multiday.css":1,"sites\/all\/modules\/date\/date_api\/date.css":1,"sites\/all\/modules\/date\/date_popup\/themes\/datepicker.1.7.css":1,"sites\/all\/modules\/date\/date_repeat_field\/date_repeat_field.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/google_analytics_reports\/google_analytics_reports\/google_analytics_reports.css":1,"sites\/all\/modules\/mollom\/mollom.css":1,"sites\/all\/modules\/simpleads\/simpleads.css":1,"sites\/all\/modules\/ubercart\/uc_file\/uc_file.css":1,"sites\/all\/modules\/ubercart\/uc_order\/uc_order.css":1,"sites\/all\/modules\/ubercart\/uc_product\/uc_product.css":1,"sites\/all\/modules\/ubercart\/uc_store\/uc_store.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/colorbox\/styles\/default\/colorbox_style.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/modules\/custom_search\/custom_search.css":1,"sites\/all\/modules\/flexslider\/assets\/css\/flexslider_img.css":1,"sites\/all\/libraries\/flexslider\/flexslider.css":1,"\/\/netdna.bootstrapcdn.com\/bootstrap\/3.0.2\/css\/bootstrap.min.css":1,"sites\/all\/themes\/bootstrap\/css\/overrides.css":1,"sites\/all\/themes\/intrepidnetwork_3\/css\/bootstrap-override.css":1,"sites\/all\/themes\/intrepidnetwork_3\/css\/calendar-override.css":1,"sites\/all\/themes\/intrepidnetwork_3\/css\/style.css":1,"sites\/all\/themes\/intrepidnetwork_3\/css\/flexslider-override.css":1,"sites\/all\/themes\/intrepidnetwork_3\/css\/ubercart_style.css":1,"sites\/all\/themes\/intrepidnetwork_3\/css\/simplead.css":1}},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px"},"googleAnalyticsReportsAjaxUrl":"\/google-analytics-reports\/ajax","custom_search":{"form_target":"_self","solr":0},"flexslider":{"optionsets":{"clone_of_flexslider_default_basic_carousel":{"namespace":"flex-","selector":".slides \u003E li","easing":"swing","direction":"horizontal","reverse":false,"smoothHeight":false,"startAt":0,"animationSpeed":600,"initDelay":0,"useCSS":true,"touch":true,"video":false,"keyboard":true,"multipleKeyboard":true,"mousewheel":0,"controlsContainer":".flex-control-nav-container","sync":"#flexslider-2","asNavFor":"","itemWidth":173,"itemMargin":0,"minItems":1,"maxItems":1,"move":0,"animation":"slide","slideshow":true,"slideshowSpeed":"7000","directionNav":true,"controlNav":true,"prevText":"","nextText":"","pausePlay":false,"pauseText":"Pause","playText":"Play","randomize":false,"thumbCaptions":false,"thumbCaptionsBoth":false,"animationLoop":true,"pauseOnAction":true,"pauseOnHover":true,"manualControls":""}},"instances":{"flexslider-1":"clone_of_flexslider_default_basic_carousel"}},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls|xml|z|zip"},"bootstrap":{"anchorsFix":1,"anchorsSmoothScrolling":1,"popoverEnabled":1,"popoverOptions":{"animation":1,"html":0,"placement":"auto","selector":"","trigger":"click","title":"","content":"","delay":0,"container":"body"},"tooltipEnabled":1,"tooltipOptions":{"animation":1,"html":0,"placement":"auto","selector":"","trigger":"hover focus","delay":0,"container":"body"}}});</script>
+</head>
+<body class="html front not-logged-in no-sidebars page-frontpage navbar-is-static-top" >
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+    <header id="navbar" role="banner" class="navbar navbar-static-top navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+            <a class="logo navbar-btn pull-left" href="/" title="Home">
+        <img src="http://www.oceanbeachsandiego.com/sites/default/files/ocean-beach-san-diego-mainstreet-association.png" alt="Home" />
+      </a>
+      
+      
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+          <div class="navbar-collapse collapse">
+        <nav role="navigation">
+                      <ul class="menu nav navbar-nav"><li class="first expanded dropdown"><a href="/attractions" title="Spectacular Attractions" class="bottom-border-purple bkg-purple dropdown-toggle" target="_self" data-target="#" data-toggle="dropdown">Attractions <span class="caret"></span></a><ul class="dropdown-menu"><li class="first leaf"><a href="/attractions" title="List all Attractions, Parks and Annual Events">All Attractions</a></li>
+<li class="expanded"><a href="/attractions/annual-events" title="Annual Events in Ocean Beach San Diego">Annual Events</a></li>
+<li class="leaf"><a href="/attractions/annual-events/farmers-market-wednesdays">Farmers Market</a></li>
+<li class="leaf"><a href="/attractions/dog-beach" title="The Original Dog Beach">Dog Beach</a></li>
+<li class="leaf"><a href="/attractions/ocean-beach-pier">Pier &amp; Tidepools</a></li>
+<li class="leaf"><a href="/attractions/community-murals-ob">Community Murals</a></li>
+<li class="expanded"><a href="/attractions/parks" title="Local Parks in Ocean Beach" target="_self">Parks &amp; Fields</a></li>
+<li class="leaf"><a href="/attractions/point-loma-lighthouse">Point Loma Lighthouse</a></li>
+<li class="leaf"><a href="/attractions/community-group" title="Ocean Beach Community">Community Groups</a></li>
+<li class="last leaf"><a href="/attractions/ob-self-guided-historic-walk" title="Ocean Beach Self-guided Historic Walk">Self-guided Historic Walk</a></li>
+</ul></li>
+<li class="expanded dropdown"><a href="http://directory.oceanbeachsandiego.com/lodging-ocean-beach-san-diego/c/4566/0/" title="Beach Area Stays" class="bottom-border-gold bkg-gold dropdown-toggle" target="_self" data-target="#" data-toggle="dropdown">Stay <span class="caret"></span></a><ul class="dropdown-menu"><li class="first leaf"><a href="http://directory.oceanbeachsandiego.com/travel/bed-breakfast/4606/" title="Bed &amp; Breakfast in Ocean Beach San Diego">Bed &amp; Breakfast</a></li>
+<li class="leaf"><a href="http://directory.oceanbeachsandiego.com/travel/hostels/4724/" title="Hostels in Ocean Beach San Diego" target="_self">Hostels</a></li>
+<li class="leaf"><a href="http://directory.oceanbeachsandiego.com/travel/hotels-lodging/4725/" title="Hotels / Lodging in Ocean Beach San Diego" target="_self">Hotels / Lodging</a></li>
+<li class="last leaf"><a href="http://directory.oceanbeachsandiego.com/travel/places-to-stay/4812/" title="Places to Stay in Ocean Beach San Diego" target="_self">Places to Stay</a></li>
+</ul></li>
+<li class="expanded dropdown"><a href="/obmastore" title="Local Shops" class="bottom-border-pink bkg-pink dropdown-toggle" target="_self" data-target="#" data-toggle="dropdown">Shops <span class="caret"></span></a><ul class="dropdown-menu"><li class="first leaf"><a href="http://directory.oceanbeachsandiego.com" title="Shop Local" target="_blank">Business Directory</a></li>
+<li class="leaf"><a href="/obmastore" title="Ocean Beach Merchandise">OBMA Online Store</a></li>
+<li class="last leaf"><a href="/obmastore/cart" title="View Cart">OBMA Shopping Cart</a></li>
+</ul></li>
+<li class="leaf"><a href="http://directory.oceanbeachsandiego.com/eats-drinks/eats-drinks/4563/" title="Eats &amp; Drinks in Ocean Beach San Diego" class="bottom-border-yellow bkg-yellow" target="_self">Eateries</a></li>
+<li class="expanded dropdown"><a href="/resources" title="Area Resources" class="bottom-border-teal bkg-teal dropdown-toggle" target="_self" data-target="#" data-toggle="dropdown">Resources <span class="caret"></span></a><ul class="dropdown-menu"><li class="first leaf"><a href="/resources/local-news">Local News</a></li>
+<li class="last collapsed"><a href="/resources/maps">Maps</a></li>
+</ul></li>
+<li class="expanded dropdown"><a href="/calendar" title="Upcoming Event Calendar" class="bottom-border-red bkg-red dropdown-toggle" target="_self" data-target="#" data-toggle="dropdown">Calendar <span class="caret"></span></a><ul class="dropdown-menu"><li class="first leaf"><a href="/calendar/month" title="Events this Month" target="_self">Month</a></li>
+<li class="leaf"><a href="/calendar/week" title="Events this Week" target="_self">Week</a></li>
+<li class="last leaf"><a href="/calendar/day" title="Events Today" target="_self">Today</a></li>
+</ul></li>
+<li class="last expanded dropdown"><a href="/media" title="Webcam, Videos, &amp; Photos" class="bottom-border-blue dropdown-toggle" target="_self" data-target="#" data-toggle="dropdown">Media <span class="caret"></span></a><ul class="dropdown-menu"><li class="first leaf"><a href="/media" title="Beach Cam and All Photos and Videos">Show All</a></li>
+<li class="leaf"><a href="/media/ob-beach-cam" title="Ocean Beach Web Cam" target="_self">Beach Cam</a></li>
+<li class="leaf"><a href="/media/photos">Photos</a></li>
+<li class="last leaf"><a href="/media/videos">Videos</a></li>
+</ul></li>
+</ul>                                            <div class="region region-navigation">
+    <section id="block-search-form" class="block block-search hidden-xs col-xs-3 clearfix">
+
+      
+  <form class="search-form form-search content-search" action="/cron.php" method="post" id="search-block-form" accept-charset="UTF-8"><div><div>
+      <h2 class="element-invisible">Search form</h2>
+    <div class="input-group"><input title="" class="custom-search-box form-control form-text form-search" placeholder="Search" type="search" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128" /><span class="input-group-btn"><button type="submit" class="btn btn-default"><i class="icon glyphicon glyphicon-search" aria-hidden="true"></i></button></span></div><button class="element-invisible btn btn-primary form-submit" id="edit-submit" name="op" value="Search" type="submit">Search</button>
+<input type="hidden" name="form_build_id" value="form-k-j-VIMl3uf2I2lIXagA757-KdQa5u2ISU2Yma8Dq78" />
+<input type="hidden" name="form_id" value="search_block_form" />
+</div>
+</div></form>
+</section> <!-- /.block -->
+<section id="block-block-4" class="block block-block beach-cam clearfix">
+
+      
+   <div><a href="/media/ob-beach-cam" target="_self"><img alt="OB Beach Cam" class="img-responsive" src="/sites/default/files/d7/user1/ob-beach-cam.png" /></a></div>
+ 
+</section> <!-- /.block -->
+<section id="block-block-1" class="block block-block social-media-channels clearfix">
+
+      
+   <div><a href="http://www.youtube.com/user/sandiegooceanbeach/videos" target="_blank"><img alt="youtube ocean beach" class="youtube-icon" src="/sites/default/files/d7/user1/ob-youtube.png" style="width: 18px; height: 21px;" /></a><a href="https://www.pinterest.com/OBMainStreet" target="_blank"><img alt="pinterest ocean beach" class="pinterest-icon" src="/sites/default/files/d7/user1/ob-pinterest.png" style="width: 21px; height: 21px;" /></a><a href="https://twitter.com/OceanBeachCA" target="_blank"><img alt="twitter ocean beach" class="twitter-icon" src="/sites/default/files/d7/user1/ob-twitter.png" style="width: 26px; height: 21px;" /></a><a href="https://www.facebook.com/OBMA92107" target="_blank"><img alt="facebook ocean beach" class="facebook-icon" src="/sites/default/files/d7/user1/ob-facebook.png" style="width: 10px; height: 21px;" /></a></div>
+ 
+</section> <!-- /.block -->
+  </div>
+                  </nav>
+      </div>
+      </div>
+</header>
+
+<div class="main-container container">
+
+  <header role="banner" id="page-header">
+    
+      <div class="region region-header">
+    <section id="block-custom-search-blocks-1" class="block block-custom-search-blocks visible-xs clearfix">
+
+      
+  <form class="search-form" action="/cron.php" method="post" id="custom-search-blocks-form-1" accept-charset="UTF-8"><div><div class="form-type-searchfield form-item-custom-search-blocks-form-1 form-item form-group">
+  <label class="element-invisible" for="edit-custom-search-blocks-form-1--2">Search this site </label>
+ <input title="" class="custom-search-box form-control form-text form-search" placeholder="Search" type="search" id="edit-custom-search-blocks-form-1--2" name="custom_search_blocks_form_1" value="" size="28" maxlength="128" />
+</div>
+<input type="hidden" name="delta" value="1" />
+<input type="hidden" name="form_build_id" value="form-9jidrPHt0fQLvwlHCpC_D5ysRx3RN53mA1NtH9znfvI" />
+<input type="hidden" name="form_id" value="custom_search_blocks_form_1" />
+<button class="btn btn-primary form-submit" id="edit-submit--2" name="op" value="Search" type="submit">Search</button>
+</div></form>
+</section> <!-- /.block -->
+  </div>
+  </header> <!-- /#page-header -->
+
+  <div class="row">
+
+    
+    <section class="col-sm-12">
+              <div class="highlighted jumbotron">  <div class="region region-highlighted">
+    <section id="block-views-carousel-jumbotron-block" class="block block-views col-xs-pad col-sm-pad row-sm-bm row-lg-bm clearfix">
+
+      
+  <div class="view view-carousel-jumbotron view-id-carousel_jumbotron view-display-id-block view-dom-id-dc222b53eac055281a3c42801b9a8a0c">
+        
+  
+  
+      <div class="view-content">
+      <div  id="flexslider-1" class="flexslider">
+  <ul class="slides"><li>  
+          <a href="http://gilmorefamilyjewelers.com" target="_blank"><img class="img-responsive" typeof="foaf:Image" src="http://www.oceanbeachsandiego.com/sites/default/files/d7/ad/field/image/gilmore-family-jewelers_0.jpg" width="1170" height="440" alt="Gilmore Family Jewelers" title="Custom Jewelery San Diego" /></a>    
+              
+          <div class="btn btn-default btn-xs edit-link"></div>  </li>
+<li>  
+          <a href="http://www.oceanbeachsandiego.com/attractions/annual-events/ob-street-fair-chili-cook-off"><img class="img-responsive" typeof="foaf:Image" src="http://www.oceanbeachsandiego.com/sites/default/files/d7/creatives/slides/ob-street-fair-chili-cook-off_0.jpg" width="1170" height="440" alt="OB Street Fair &amp; Chili Cook-Off" title="OB Street Fair &amp; Chili Cook-Off" /></a>    
+          <div class="btn btn-default btn-xs edit-link"></div>  </li>
+<li>  
+          <a href="http://www.oceanbeachsandiego.com/attractions/annual-events/farmers-market-wednesdays"><img class="img-responsive" typeof="foaf:Image" src="http://www.oceanbeachsandiego.com/sites/default/files/d7/creatives/slides/ob-farmers-market-wednesdays_0.jpg" width="1170" height="440" alt="OB Farmers Market Wednesdays" title="OB Farmers Market Wednesdays" /></a>    
+          <div class="btn btn-default btn-xs edit-link"></div>  </li>
+<li>  
+          <a href="http://www.oceanbeachsandiego.com/attractions/annual-events/4th-july-fireworks"><img class="img-responsive" typeof="foaf:Image" src="http://www.oceanbeachsandiego.com/sites/default/files/d7/creatives/slides/ob-4th-july-fireworks.jpg" width="1170" height="440" alt="OB 4th of July Fireworks" title="Celebrate the fourth of July with Ocean Beach" /></a>    
+          <div class="btn btn-default btn-xs edit-link"></div>  </li>
+<li>  
+          <a href="http://directory.oceanbeachsandiego.com/"><img class="img-responsive" typeof="foaf:Image" src="http://www.oceanbeachsandiego.com/sites/default/files/d7/creatives/slides/ob-local_0.jpg" width="1170" height="440" alt="OB Local Directory" title="OB Local Directory" /></a>    
+          <div class="btn btn-default btn-xs edit-link"></div>  </li>
+</ul></div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>
+</section> <!-- /.block -->
+  </div>
+</div>
+                  <a id="main-content"></a>
+                    <h1 class="page-header">Access denied</h1>
+                                                          <div class="region region-content">
+    <section id="block-system-main" class="block block-system col-md-8 clearfix">
+
+      
+  You are not authorized to access this page.
+</section> <!-- /.block -->
+<section id="block-block-9" class="block block-block col-xs-12 col-xs-pad col-sm-pad visible-xs row-sm-tm clearfix">
+
+      
+   <div><a href="http://directory.oceanbeachsandiego.com/" target="_blank"><img alt="Business Directory" class="img-responsive" src="/sites/default/files/d7/user1/business-directory-ob.jpg" /></a></div>
+ 
+</section> <!-- /.block -->
+<section id="block-views-calendar-block-2" class="block block-views blue col-xs-12 col-sm-6 col-md-4 col-xs-pad col-sm-pad col-xs-pull-left row-sm-tm row-lg-tm listBlock clearfix">
+
+        <h2 class="block-title"><a href="/calendar/month" class="block-title-link" title="View All">Upcoming Events</a></h2>
+    
+  <div class="view view-calendar view-id-calendar view-display-id-block_2 view-dom-id-f42a00a8dcf2370551bf5a5707ce56fe">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row-odd views-row-first">
+      
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/resources/local-news/obma-board-directors-meeting-2nd-thursday">OBMA Board of Directors Meeting - 2nd Th...</a></span>  </div>  </div>
+  <div class="views-row-even">
+      
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/resources/local-news/3rd-corner-ahi-thursday">The 3rd Corner - Ahi Thursday</a></span>  </div>  </div>
+  <div class="views-row-odd">
+      
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/resources/local-news/stay-young-art-art-grownups">Stay Young At Art - Art for Grownups</a></span>  </div>  </div>
+  <div class="views-row-even">
+      
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/resources/local-news/womans-club-rain-tank-install">Woman&#039;s Club: Rain Tank Install</a></span>  </div>  </div>
+  <div class="views-row-odd">
+      
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/resources/local-news/dog-beach-clean">DOG BEACH Clean-Up</a></span>  </div>  </div>
+  <div class="views-row-even views-row-last">
+      
+  <div class="views-field views-field-title">        <span class="field-content"><a href="/resources/local-news/66th-annual-ob-kite-festival-rescheduled">66th Annual OB Kite Festival Rescheduled</a></span>  </div>  </div>
+    </div>
+  
+  
+  
+      
+<div class="more-link"> <a href="/calendar/month" class="first-word">read more</a> </div>
+  
+  
+  
+</div>
+</section> <!-- /.block -->
+<section id="block-views-news-block" class="block block-views gold col-xs-12 col-sm-6 col-md-4 col-xs-pad col-sm-pad col-xs-pull-left row-sm-tm row-lg-tm listBlock clearfix">
+
+        <h2 class="block-title"><a href="/resources/local-news" class="block-title-link" title="Read More">Local News</a></h2>
+    
+  <div class="view view-news view-id-news view-display-id-block view-dom-id-c4ab790c5549dfbcfe74f4ad50f529d4">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row-odd views-row-first">
+      
+          <a href="/resources/local-news/official-ocean-beach-banner">Official Ocean Beach Banner</a>    </div>
+  <div class="views-row-even">
+      
+          <a href="/resources/local-news/ocean-beach-arts-community-highlighted">Ocean Beach Arts Community Highlighted</a>    </div>
+  <div class="views-row-odd">
+      
+          <a href="/resources/local-news/gilmore-family-jewelers-celebrates-mothers">Gilmore Family Jewelers Celebrates Mothers</a>    </div>
+  <div class="views-row-even">
+      
+          <a href="/resources/local-news/want-run-obma-board">Want to Run for the OBMA Board?</a>    </div>
+  <div class="views-row-odd">
+      
+          <a href="/resources/local-news/espresso-cucina-launches-new-menu">Espresso Cucina Launches New Menu</a>    </div>
+  <div class="views-row-even views-row-last">
+      
+          <a href="/resources/local-news/restaurants-support-ob-scholarship-fund">Restaurants Support OB Scholarship Fund</a>    </div>
+    </div>
+  
+  
+  
+      
+<div class="more-link"> <a href="/resources/local-news" class="first-word">read more</a> </div>
+  
+  
+  
+</div>
+</section> <!-- /.block -->
+<section id="block-block-19" class="block block-block col-xs-12 col-md-4 col-xs-pad col-sm-pad col-xs-pull-left row-sm-tm row-lg-tm subscribeBlock clearfix">
+
+      
+   <div class="inset-shadow bkg-hot-pink subscriptionForm">
+<div><img alt="Upcoming Event Newsletter Subscription" class="img-responsive" src="/sites/default/files/d7/user1/upcoming-event-notifications.png" /></div>
+<form action="http://oceanbeachsandiego.us1.list-manage.com/subscribe/post?u=7ebcc22ac6253373595c26edc&amp;id=f43f8a1758" id="mc-embedded-subscribe-form" method="post" name="mc-embedded-subscribe-form" role="form" target="_blank"><input class="form-control" id="mce-EMAIL" placeholder="Enter Your Email" type="email" value="" /><div class="mc-embedded-subscribe pull-right"><button class="btn btn-lg btn-hot-pink glow-wht" id="mc-embedded-subscribe" type="submit">SUBSCRIBE</button></div>
+<p>		<a class="mc_embed_close" href="#" id="mc_embed_close" style="display: none;">Close</a></p></form>
+</div>
+<div class="row-sm-tm row-lg-tm hidden-sm"><div class="header">
+  <div class="ad-link"></div>
+</div>
+<div class="adslist">
+  <script type="text/javascript">
+    _simpelads_load('.simpleads-63-content-0', 63, 1);
+  </script>
+    <div class="simpleads-63-content-0"></div>
+
+    
+</div>
+</div>
+ 
+</section> <!-- /.block -->
+  </div>
+    </section>
+
+    
+  </div>
+</div>
+<footer class="footer container">
+    <div class="region region-footer">
+    <section id="block-block-5" class="block block-block site-name col-xs-12 clearfix">
+
+        <h2 class="block-title">OCEAN BEACH</h2>
+    
+   <h3>MAINSTREET ASSOCIATION</h3>
+ 
+</section> <!-- /.block -->
+<section id="block-block-2" class="block block-block logo col-xs-12 col-sm-4 col-md-2 clearfix">
+
+      
+   <div><img alt="Ocean Beach MainStreet Association" src="/sites/default/files/d7/user1/ocean-beach-mainstreet-association.png" style="width: 83px; height: 119px;" /></div>
+ 
+</section> <!-- /.block -->
+<section id="block-menu-menu-about" class="block block-menu col-xs-12 col-sm-4 col-md-2 clearfix">
+
+        <h2 class="block-title"><a href="/mainstreet-association" class="block-title-link" title="About the OBMA">About OBMA</a></h2>
+    
+  <ul class="menu nav"><li class="first leaf"><a href="/mainstreet-association/mission-statement" title="OBMA Mission Statement">Mission Statement</a></li>
+<li class="leaf"><a href="/mainstreet-association/advertise-market-promote" title="Advertise, Market, Promote">Advertise with Us</a></li>
+<li class="leaf"><a href="/mainstreet-association/volunteer">Volunteer</a></li>
+<li class="leaf"><a href="/mainstreet-association/board-of-directors" title="Board of Directors">Directors</a></li>
+<li class="leaf"><a href="/mainstreet-association/committees" title="Committees &amp; Meeting Times">Committees</a></li>
+<li class="last leaf"><a href="/mainstreet-association/staff" title="OBMA Staff">Staff</a></li>
+</ul>
+</section> <!-- /.block -->
+<section id="block-menu-menu-members" class="block block-menu col-xs-12 col-sm-4 col-md-2 clearfix">
+
+        <h2 class="block-title"><a href="/obma" class="block-title-link" title="Member Information and Resources">Member Info</a></h2>
+    
+  <ul class="menu nav"><li class="first leaf"><a href="/obma/member-benefits" title="Member Benefits">Why be a Member?</a></li>
+<li class="leaf"><a href="/obma/join-now" title="Join Now">Become a Member</a></li>
+<li class="leaf"><a href="/obmastore/membership" title="Pay my annual membership fee">Renew Membership</a></li>
+<li class="leaf"><a href="/obma/member-announcement-form" title="Submit your announcement here.">Submit Event or News</a></li>
+<li class="leaf"><a href="http://directory.oceanbeachsandiego.com/" title="Business Directory" target="_blank">Member Directory</a></li>
+<li clas100 36027    0 36027    0     0  18944      0 --:--:--  0:00:01 --:--:-- 47032
+s="last leaf"><a href="/obma/membership-information">Additional Info</a></li>
+</ul>
+</section> <!-- /.block -->
+<section id="block-block-3" class="block block-block col-xs-12 col-sm-4 col-md-2 clearfix">
+
+        <h2 class="block-title"><a href="/contact" class="block-title-link">CONTACT OBMA</a></h2>
+    
+   <address>1868 Bacon St., #A<br />
+	San Diego, CA 92107<br />
+	(619) 224-4906</address>
+<ul class="menu nav"><li class="leaf"><a href="/contact">Email Us</a></li>
+<li class="leaf"><a href="https://www.google.com/maps/preview#!data=!1m4!1m3!1d4221!2d-117.2516683!3d32.7465216!4m13!3m12!1m0!1m1!1s1868+Bacon+St%2C+San+Diego%2C+CA+92107!3m8!1m3!1d429156!2d-117.1089785!3d32.8245525!3m2!1i1024!2i768!4f13.1&amp;fid=0" target="_blank">Get Directions</a></li>
+</ul>
+</section> <!-- /.block -->
+<section id="block-menu-menu-media-press" class="block block-menu col-xs-12 col-sm-4 col-md-2 clearfix">
+
+        <h2 class="block-title"><a href="/media" class="block-title-link" title="View All">Media &amp; Press</a></h2>
+    
+  <ul class="menu nav"><li class="first leaf"><a href="/resources/local-news">Local News</a></li>
+<li class="leaf"><a href="/media/newsletters">Newsletters</a></li>
+<li class="leaf"><a href="/media/photos" target="_self">Photos of OB</a></li>
+<li class="last leaf"><a href="/media/videos">Videos of OB</a></li>
+</ul>
+</section> <!-- /.block -->
+<section id="block-block-6" class="block block-block social-media-channels-footer col-xs-12 col-sm-4 col-md-2 clearfix">
+
+        <h2 class="block-title"><a href="https://www.facebook.com/OBMA92107" class="block-title-link" title="LIKE us on Facebook">CONNECT + SHARE</a></h2>
+    
+   <div><a href="http://www.youtube.com/user/sandiegooceanbeach/videos" target="_blank"><img alt="YouTube San Diego Ocean Beach" src="/sites/default/files/d7/user1/ob-youtube-white.png" style="width: 18px; height: 21px;" /></a><a href="https://www.pinterest.com/OBMainStreet" target="_blank"><img alt="Pinterest OB MainStreet" src="/sites/default/files/d7/user1/ob-pinterest-white.png" style="width: 21px; height: 21px;" /></a><a href="https://twitter.com/OceanBeachCA"><img alt="Twitter Ocean Beach CA" src="/sites/default/files/d7/user1/ob-twitter-white.png" style="width: 26px; height: 21px;" /></a><a href="https://www.facebook.com/OBMA92107" target="_blank"><img alt="OBMA 92107" src="/sites/default/files/d7/user1/ob-facebook-white.png" style="width: 10px; height: 21px;" /></a></div>
+ 
+</section> <!-- /.block -->
+<section id="block-block-7" class="block block-block legal row col-xs-12 pull-left topMargin30 clearfix">
+
+      
+   <div class="text-center topMargin30">
+<div class="col-xs-12"><small>Ocean Beach MainStreet Association. © 1978-2014 All Rights Reserved. Privacy Policy.</small></div>
+<div class="col-xs-12"><small>Website Designed &amp; Developed by <a href="http://www.intrepidnetworkinc.com" target="_blank">Intrepid Network Inc</a>.</small></div>
+</div>
+ 
+</section> <!-- /.block -->
+  </div>
+</footer>
+  <script src="http://www.oceanbeachsandiego.com/sites/all/modules/flexslider/assets/js/flexslider.load.js?n59d4a"></script>
+<script src="http://www.oceanbeachsandiego.com/sites/all/themes/bootstrap/js/bootstrap.js?n59d4a"></script>
+</body>
+</html>
+
+  Command to be executed is:  /usr/bin/curl http://www.oceanbeachsandiego.com/cron.php?cron_key=ecYDnQw2pBZVqGQKVrtWTOBltEwGw377za2OKzt-bnI
+ Task ID of this command is:  47063
+Where should log be written:  /mnt/stor9-wc2-dfw1/484947/532128/www.oceanbeachsandiego.com/logs
+		 Start time: Thu May  8 10:04:29 CDT 2014
+              Email address:  Notification Disabled
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:03 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:04 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:05 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:06 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:07 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:08 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:09 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:10 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:11 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:12 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:13 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:14 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:15 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:16 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:17 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:18 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:19 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:20 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:21 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:22 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:23 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:24 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:25 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:26 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:27 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:28 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:29 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:30 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:30 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:30 --:--:--     0
+curl: (52) Empty reply from server

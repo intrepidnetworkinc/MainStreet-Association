@@ -1,0 +1,3 @@
+[08-May-2014 06:24:27 America/Los_Angeles] PHP Fatal error:  Call to undefined function views_get_enabled_display_extenders() in /mnt/stor9-wc2-dfw1/484947/532128/www.oceanbeachsandiego.com/web/content/sites/all/modules/views/plugins/views_plugin_display.inc on line 46
+[08-May-2014 07:23:57 America/Los_Angeles] PHP Fatal error:  Call to undefined function _bootstrap_process_element() in /mnt/stor9-wc2-dfw1/484947/532128/www.oceanbeachsandiego.com/web/content/includes/form.inc on line 1851
+[08-May-2014 07:43:07 America/Los_Angeles] PHP Fatal error:  Call to undefined function db_query() in /mnt/stor9-wc2-dfw1/484947/532128/www.oceanbeachsandiego.com/web/content/includes/path.inc on line 176
