@@ -7,6 +7,11 @@
 .simplead-container.image-ad.last {
   margin-bottom: 0px;
 }
+@media (min-width:992px){
+body.page-node-367 #block-simpleads-ad-groups-71 {
+  display:none;
+}
+}
 @media (min-width:768px) and (max-width:991px){
 .simplead-container.image-ad {
   float: left;
@@ -18,6 +23,9 @@
   max-width: 100%;
   height: auto;
 }
+body.page-node-367 #block-simpleads-ad-groups-17 {
+  display:none;
+}
 }
 @media (max-width:480px){
 .simplead-container.image-ad {
@@ -25,5 +33,8 @@
 }
 .simplead-container.image-ad img {
   width: 100%;
+}
+body.page-node-367 #block-simpleads-ad-groups-17 {
+  display:none;
 }
 }

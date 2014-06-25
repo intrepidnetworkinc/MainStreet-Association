@@ -14,25 +14,19 @@ function responsive_photo_gallery_default_fe_block_settings() {
 
   $export['views-photo_album-block_main_slider'] = array(
     'cache' => -1,
+    'css_class' => '',
     'custom' => 0,
     'delta' => 'photo_album-block_main_slider',
     'module' => 'views',
     'node_types' => array(),
-    'pages' => 'home-requirements
-recovery-houses',
+    'pages' => 'photos',
     'roles' => array(),
     'themes' => array(
-      'bartik' => array(
+      'intrepidnetwork_3' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
-      'intrepidnetwork' => array(
-        'region' => 'header',
-        'status' => 1,
-        'theme' => 'intrepidnetwork',
-        'weight' => -13,
+        'theme' => 'intrepidnetwork_3',
+        'weight' => -25,
       ),
       'seven' => array(
         'region' => '',
@@ -47,25 +41,19 @@ recovery-houses',
 
   $export['views-photo_album-full_block'] = array(
     'cache' => -1,
+    'css_class' => '',
     'custom' => 0,
     'delta' => 'photo_album-full_block',
     'module' => 'views',
     'node_types' => array(),
-    'pages' => 'home-requirements
-recovery-houses',
+    'pages' => 'photos',
     'roles' => array(),
     'themes' => array(
-      'bartik' => array(
+      'intrepidnetwork_3' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
-      'intrepidnetwork' => array(
-        'region' => 'header',
-        'status' => 1,
-        'theme' => 'intrepidnetwork',
-        'weight' => -14,
+        'theme' => 'intrepidnetwork_3',
+        'weight' => -26,
       ),
       'seven' => array(
         'region' => '',

@@ -20,6 +20,7 @@ function responsive_carousel_jumbotron_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
+          'class' => '',
           'image_link' => '',
           'image_style' => '',
         ),
@@ -34,11 +35,11 @@ function responsive_carousel_jumbotron_field_default_field_instances() {
     'settings' => array(
       'alt_field' => 1,
       'default_image' => 0,
-      'file_directory' => 'creatives/slides',
+      'file_directory' => 'd7/creatives/slides',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '400 KB',
-      'max_resolution' => '1170x639',
-      'min_resolution' => '1024x639',
+      'max_resolution' => '1170x440',
+      'min_resolution' => '1170x440',
       'title_field' => 1,
       'user_register_form' => FALSE,
     ),
@@ -46,6 +47,16 @@ function responsive_carousel_jumbotron_field_default_field_instances() {
       'active' => 1,
       'module' => 'image',
       'settings' => array(
+        'manualcrop_crop_info' => TRUE,
+        'manualcrop_default_crop_area' => TRUE,
+        'manualcrop_enable' => FALSE,
+        'manualcrop_inline_crop' => FALSE,
+        'manualcrop_instant_crop' => FALSE,
+        'manualcrop_instant_preview' => TRUE,
+        'manualcrop_require_cropping' => array(),
+        'manualcrop_styles_list' => array(),
+        'manualcrop_styles_mode' => 'exclude',
+        'manualcrop_thumblist' => FALSE,
         'preview_image_style' => 'thumbnail',
         'progress_indicator' => 'throbber',
       ),
@@ -59,7 +70,7 @@ function responsive_carousel_jumbotron_field_default_field_instances() {
     'bundle' => 'creative_slide',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Text to place as "title" text which most browsers display as a tooltip when hovering over the link.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -85,7 +96,7 @@ function responsive_carousel_jumbotron_field_default_field_instances() {
       ),
       'enable_tokens' => 0,
       'rel_remove' => 'default',
-      'title' => 'optional',
+      'title' => 'none',
       'title_maxlength' => 255,
       'title_value' => '',
       'url' => 0,
@@ -106,10 +117,21 @@ function responsive_carousel_jumbotron_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-creative_slide-meta_description'
-  $field_instances['node-creative_slide-meta_description'] = array(
+  // Exported field_instance: 'node-creative_slide-meta_robots'
+  $field_instances['node-creative_slide-meta_robots'] = array(
     'bundle' => 'creative_slide',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'metatags_quick' => array(
+          'noarchive' => 'noarchive',
+          'nofollow' => 'nofollow',
+          'noindex' => 'noindex',
+          'noodp' => 'noodp',
+          'nosnippet' => 'nosnippet',
+          'noydir' => 'noydir',
+        ),
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -122,59 +144,30 @@ function responsive_carousel_jumbotron_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'meta_description',
+    'field_name' => 'meta_robots',
     'formatter' => 'metatags_quick_default',
-    'label' => '(Meta)Description',
-    'required' => FALSE,
+    'label' => '(Meta)Robots',
+    'required' => 0,
     'settings' => array(
+      'options' => 'noarchive,nofollow,noindex,noodp,nosnippet,noydir',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 0,
       'module' => 'metatags_quick',
       'settings' => array(),
-      'type' => 'metatags_quick_textarea',
-      'weight' => 0,
-    ),
-  );
-
-  // Exported field_instance: 'node-creative_slide-meta_keywords'
-  $field_instances['node-creative_slide-meta_keywords'] = array(
-    'bundle' => 'creative_slide',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'metatags_quick',
-        'settings' => array(),
-        'type' => 'metatags_quick_default',
-        'weight' => 3,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'meta_keywords',
-    'formatter' => 'metatags_quick_default',
-    'label' => '(Meta)Keywords',
-    'required' => FALSE,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'module' => 'metatags_quick',
-      'settings' => array(),
-      'type' => 'metatags_quick_textfield',
-      'weight' => 0,
+      'type' => 'metatags_quick_checkboxes',
+      'weight' => 6,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('(Meta)Description');
-  t('(Meta)Keywords');
+  t('(Meta)Robots');
   t('Creative');
   t('Destination');
   t('Images should include a Title, Teaser Text and Call to Action Button all on top of a nice photograph.');
+  t('Text to place as "title" text which most browsers display as a tooltip when hovering over the link.');
 
   return $field_instances;
 }

@@ -2,40 +2,51 @@
  * This file should get overwritten if Method 1 is used. If Method 2 is chosen,
  * remove this comment and start adding your styles to this file.
  */
-body.maintenance-page {
-  text-align: center;
-}
+
  @charset "utf-8";
 /* CSS Document */
 
 @font-face {
-  font-family: 'AftasansItalic';
-  src: url('fonts/AftaSansThin-Italic-webfont.eot');
-  src: url('fonts/AftaSansThin-Italic-webfont.eot?#iefix') format('embedded-opentype'),  url('fonts/AftaSansThin-Italic-webfont.woff') format('woff'),  url('fonts/AftaSansThin-Italic-webfont.ttf') format('truetype'),  url('fonts/AftaSansThin-Italic-webfont.svg#AftasansItalic') format('svg');
+  font-family: 'afta_sansitalic';
+  src: url('fonts/aftasansthin-italic-webfont.eot');
+  src: url('fonts/aftasansthin-italic-webfont.eot?#iefix') format('embedded-opentype'),
+       url('fonts/aftasansthin-italic-webfont.woff') format('woff'),
+       url('fonts/aftasansthin-italic-webfont.ttf') format('truetype'),
+       url('fonts/aftasansthin-italic-webfont.svg#afta_sansitalic') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: 'AftasansRegular';
-  src: url('fonts/AftaSansThin-Regular-webfont.eot');
-  src: url('fonts/AftaSansThin-Regular-webfont.eot?#iefix') format('embedded-opentype'),  url('fonts/AftaSansThin-Regular-webfont.woff') format('woff'),  url('fonts/AftaSansThin-Regular-webfont.ttf') format('truetype'),  url('fonts/AftaSansThin-Regular-webfont.svg#AftasansRegular') format('svg');
+  font-family: 'afta_sansregular';
+  src: url('fonts/aftasansthin-regular-webfont.eot');
+  src: url('fonts/aftasansthin-regular-webfont.eot?#iefix') format('embedded-opentype'),
+       url('fonts/aftasansthin-regular-webfont.woff') format('woff'),
+       url('fonts/aftasansthin-regular-webfont.ttf') format('truetype'),
+       url('fonts/aftasansthin-regular-webfont.svg#afta_sansregular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: 'ArchivoBlackRegular';
-  src: url('fonts/ArchivoBlack-Regular-webfont.eot');
-  src: url('fonts/ArchivoBlack-Regular-webfont.eot?#iefix') format('embedded-opentype'),  url('fonts/ArchivoBlack-Regular-webfont.woff') format('woff'),  url('fonts/ArchivoBlack-Regular-webfont.ttf') format('truetype'),  url('fonts/ArchivoBlack-Regular-webfont.svg#ArchivoBlackRegular') format('svg');
+  font-family: 'archivo_blackregular';
+  src: url('fonts/archivoblack-regular-webfont.eot');
+  src: url('fonts/archivoblack-regular-webfont.eot?#iefix') format('embedded-opentype'),
+       url('fonts/archivoblack-regular-webfont.woff') format('woff'),
+       url('fonts/archivoblack-regular-webfont.ttf') format('truetype'),
+       url('fonts/archivoblack-regular-webfont.svg#archivo_blackregular') format('svg');
   font-weight: normal;
   font-style: normal;
+}
+body.maintenance-page {
+  text-align: center;
 }
 /* Font Face: Afta */
 h2, h4, .first-word, .menu.nav, input, button, select, textarea, .footer-navigation section, .pager, .nav-tabs > li > a, .calendar-calendar th.days, th, .view-uc-catalog-terms .view-content > div a:nth-child(2) {
-  font-family: 'AftasansRegular', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /*font-family: 'AftasansRegular', 'Helvetica Neue', Helvetica, Arial, sans-serif;*/
+  font-family: 'afta_sansregular', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 /* Font Face: Afta */
 h1, h2 .block-title-link, .more-link a, .region-footer section.site-name h2, .date-heading h3, .day {
-  font-family: 'ArchivoBlackRegular', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'archivo_blackregular', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 /* Font sizes */
 .main-container .block-title-link, .more-link a {
@@ -106,7 +117,7 @@ button.glow-wht:focus, button.glow-wht:hover, .glow-wht li a:hover {
   -webkit-box-shadow: 0px 0px 8px 0px rgba(81, 167, 179, .8);
   box-shadow: 0px 0px 8px 0px rgba(81, 167, 179, .8);
 }
-.main-container section.block-uc-cart h2.block-title:focus, .main-container section.block-uc-cart h2.block-title:hover {
+.main-container section.block-uc-cart h2.block-title:focus, .main-container section.block-uc-cart h2.block-title:hover, .main-container section#block-system-user-menu h2.block-title:focus, .main-container section#block-system-user-menu h2.block-title:hover, .main-container section#block-views-street-fair-block h2.block-title:hover {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
@@ -239,6 +250,9 @@ section.blue h2 {
 .main-container section h2.block-title {
   padding: 9px 0 9px 20px;
 }
+.main-container section#block-uc-cart-cart h2.block-title, .main-container section#block-system-user-menu h2.block-title {
+  padding: 9px 0 ;
+}
 section.gold h2 a, section.blue h2 a {
   color: #fff;
 }
@@ -287,7 +301,7 @@ section.blue .more-link a {
   border-right: none;
   margin: 0;
   padding: 0;
-  background: url(../images/footer-horizontal-line.gif) repeat-x center center;
+  background: url(../images/footer_horizontal_line.gif) repeat-x center center;
   color: #fff;
 }
 .region-footer section p {
@@ -374,6 +388,12 @@ iframe.media-youtube-player, iframe.google-map {
 ol.search-results {
   padding-left: 20px;
 }
+body.page-user-edit form#user-profile-form fieldset.panel.panel-default.form-wrapper {
+  display: none;
+}
+body.not-front #block-system-main.col-md-8 {
+  min-height: 400px;
+}
 @media (min-width:1200px){
 .navbar .container {
   max-width: inherit;
@@ -428,6 +448,9 @@ body {
 }
 .main-container .region.region-content section.block-views .view-content a {
   padding: 15px 0 15px 10px;
+}
+.main-container section#block-views-street-fair-block h2.block-title:hover a {
+  padding: 15px 0 15px 0px;
 }
 .social-media-channels {
   height: 21px;
@@ -564,6 +587,9 @@ iframe.media-youtube-player, iframe.google-map {
 #views-exposed-form-photo-album-list-page .views-exposed-form .views-exposed-widget.views-submit-button, #views-exposed-form-photo-album-list-page .views-exposed-form .views-exposed-widget.views-reset-button, #views-exposed-form-media-page .views-exposed-form .views-exposed-widget.views-submit-button, #views-exposed-form-media-page .views-exposed-form .views-exposed-widget.views-reset-button, #views-exposed-form-video-list-page .views-exposed-form .views-exposed-widget.views-submit-button, #views-exposed-form-video-list-page .views-exposed-form .views-exposed-widget.views-reset-button {
   float: left;
   padding: 0 5px 10px 15px;
+}
+body.page-node-367 h1.page-header { /* Street Fair Title */
+  font-size:42px;
 }
 }
 /* Small devices Tablets (>= 768px) */

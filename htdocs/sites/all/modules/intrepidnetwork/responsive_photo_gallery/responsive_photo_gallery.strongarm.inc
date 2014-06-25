@@ -28,6 +28,12 @@ function responsive_photo_gallery_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'search_index' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_result' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -35,10 +41,13 @@ function responsive_photo_gallery_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '3',
+          'weight' => '6',
         ),
         'xmlsitemap' => array(
-          'weight' => '2',
+          'weight' => '5',
+        ),
+        'redirect' => array(
+          'weight' => '7',
         ),
       ),
       'display' => array(),
@@ -50,16 +59,14 @@ function responsive_photo_gallery_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_photo_album_slide';
-  $strongarm->value = array(
-    0 => 'main-menu',
-  );
+  $strongarm->value = array();
   $export['menu_options_photo_album_slide'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_parent_photo_album_slide';
-  $strongarm->value = 'main-menu:0';
+  $strongarm->value = 'main-menu:3053';
   $export['menu_parent_photo_album_slide'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -89,7 +96,7 @@ function responsive_photo_gallery_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'page_title_type_photo_album_slide';
-  $strongarm->value = '';
+  $strongarm->value = '[current-page:page-title] | [site:name] | Photo Album';
   $export['page_title_type_photo_album_slide'] = $strongarm;
 
   $strongarm = new stdClass();

@@ -57,7 +57,7 @@ function responsive_photo_gallery_image_default_styles() {
     'name' => 'photo_album_thumbnail',
     'label' => 'Photo Album Thumbnail',
     'effects' => array(
-      4 => array(
+      12 => array(
         'label' => 'Scale and crop',
         'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
         'effect callback' => 'image_scale_and_crop_effect',
@@ -67,8 +67,8 @@ function responsive_photo_gallery_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => 173,
-          'height' => 100,
+          'width' => 480,
+          'height' => 500,
         ),
         'weight' => 1,
       ),
@@ -84,9 +84,9 @@ function responsive_photo_gallery_image_default_styles() {
 function responsive_photo_gallery_node_info() {
   $items = array(
     'photo_album_slide' => array(
-      'name' => t('Photo Album Slide'),
+      'name' => t('Photo Album'),
       'base' => 'node_content',
-      'description' => t('Appears in the Photo Album carousel jumbotron.'),
+      'description' => t('Albums are listed in a grid format on the Media Photo page. Each album contains image for an event, function, area, destination or location. The first image in the album will be used as the album cover. You can drag and drop image swithin the album’s image list to sort their display order.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',
