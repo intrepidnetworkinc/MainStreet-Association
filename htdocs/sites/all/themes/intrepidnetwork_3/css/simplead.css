@@ -7,6 +7,9 @@
 .simplead-container.image-ad.last {
   margin-bottom: 0px;
 }
+body.front .simplead-container.image-ad img {
+  width: 100%;
+}
 @media (min-width:992px){
 body.page-node-367 #block-simpleads-ad-groups-71 {
   display:none;
