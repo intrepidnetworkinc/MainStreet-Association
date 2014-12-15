@@ -4,7 +4,7 @@
 .simplead-container.image-ad {
   margin-bottom: 30px;
 }
-.simplead-container.image-ad.last {
+.simplead-container.image-ad.last, .front .simplead-container.image-ad.last {
   margin-bottom: 0px;
 }
 body.front .simplead-container.image-ad img {

@@ -69,14 +69,10 @@ ul.catalog > li > a, ul.catalog > li > span > a {
 ul.catalog > li > ul.menu > li a  {
   padding-left: 20px;
 }
-/*.uc-catalog > .view-content > div, .view-frontpage .view-content > div {
-  margin-bottom: 30px;
-}*/
 .uc-cart-checkout-form .uc-store-address-field .form-item label {
   padding: 5px 0 0;
   margin-bottom: 0;
 }
-
 .order-review-table {
   width: 100%;
 }
@@ -90,7 +86,6 @@ ul.catalog > li > ul.menu > li a  {
 #uc-cart-pane-quotes .form-submit {
   margin-left: 5px;
 }
-
 #quote {
   border: 0 solid #BBBBBB;
 }
@@ -121,6 +116,9 @@ div.more-product-images {
 }
 #node-product-full-group-description p:last-child {
   margin-bottom:15px;
+}
+.term-listing-heading {
+  display: none;
 }
 @media (min-width: 1200px) {
 .form-type-uc-quantity {

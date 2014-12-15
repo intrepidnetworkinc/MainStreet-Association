@@ -97,14 +97,15 @@ body.admin-menu {
 }
 #admin-menu .dropdown li li {
   background: #202020;
-  filter: Alpha(opacity=88);
-  opacity: 0.88;
+  /*filter: Alpha(opacity=88);
+  opacity: 0.88;*/ /* Patched by JAU for FF34 issues */
+  background-color: rgba(69,69,74, 0.88);
   width: 160px; /* Required for Opera */
 }
-#admin-menu .dropdown li li li {
+/*#admin-menu .dropdown li li li {
   filter: Alpha(opacity=100);
   opacity: 1;
-}
+}*/ /* Patched by JAU for FF34 issues */
 
 /* Second-level lists */
 /* Note: We must hide sub-lists or scrollbars might appear (display: none is not read by screen readers). */

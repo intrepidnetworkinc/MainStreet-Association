@@ -168,3 +168,6 @@
 .single-day.today a, td.multi-day a {
   color: #fff;
 }
+.calendar-calendar .week-view #single-day-container, .calendar-calendar .day-view #single-day-container {
+  display: table;
+}

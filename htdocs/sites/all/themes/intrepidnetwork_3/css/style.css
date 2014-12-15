@@ -290,11 +290,20 @@ section.blue .more-link a {
 .subscriptionForm > div > img {
   margin: 0 0 42px;
 }
+.front .subscriptionForm > div > img {
+  margin: 0 0 30px;
+}
 #mc-embedded-subscribe-form div.mc-embedded-subscribe {
   padding: 52px 0;
 }
+.front #mc-embedded-subscribe-form div.mc-embedded-subscribe {
+  padding: 30px 0;
+}
 #mc-embedded-subscribe-form {
   min-height: 184px;
+}
+.front #mc-embedded-subscribe-form {
+  min-height: 175px;
 }
 .region-footer section.site-name {
   text-align: center;
@@ -394,6 +403,11 @@ body.page-user-edit form#user-profile-form fieldset.panel.panel-default.form-wra
 body.not-front #block-system-main.col-md-8 {
   min-height: 400px;
 }
+
+body.logged-in #mediaBrowser {
+  height: 910px;
+}
+
 @media (min-width:1200px){
 .navbar .container {
   max-width: inherit;
@@ -498,7 +512,7 @@ iframe.media-youtube-player, iframe.google-map {
 li.sharethis {
   margin-top: 15px;
 }
-#views-exposed-form-photo-album-list-page .views-exposed-widgets, #views-exposed-form-media-page .views-exposed-widgets {
+#views-exposed-form-photo-album-list-page .views-exposed-widgets, #views-exposed-form-media-page .views-exposed-widgets, #views-exposed-form-news-page .views-exposed-widgets {
   margin-bottom: 30px;
 }
 #views-exposed-form-photo-album-list-page .views-exposed-form .views-exposed-widget, #views-exposed-form-media-page .views-exposed-form .views-exposed-widget {
@@ -578,7 +592,7 @@ li.sharethis {
 iframe.media-youtube-player, iframe.google-map {
   height: 418px;
 }
-#views-exposed-form-photo-album-list-page .views-exposed-widgets, #views-exposed-form-media-page .views-exposed-widgets, #views-exposed-form-video-list-page .views-exposed-widgets {
+#views-exposed-form-photo-album-list-page .views-exposed-widgets, #views-exposed-form-media-page .views-exposed-widgets, #views-exposed-form-video-list-page .views-exposed-widgets , #views-exposed-form-news-page .views-exposed-widgets{
   margin-bottom: 15px;
 }
 #views-exposed-form-photo-album-list-page .views-exposed-form .views-exposed-widget, #views-exposed-form-media-page .views-exposed-form .views-exposed-widget, #views-exposed-form-video-list-page .views-exposed-form .views-exposed-widget {
@@ -722,7 +736,7 @@ footer section:nth-child(7).block h2.block-title {
 li.sharethis {
   margin-top: 5px;
 }
-#views-exposed-form-photo-album-list-page .views-exposed-widgets, #views-exposed-form-media-page .views-exposed-widgets, #views-exposed-form-video-list-page .views-exposed-widgets {
+#views-exposed-form-photo-album-list-page .views-exposed-widgets, #views-exposed-form-media-page .views-exposed-widgets, #views-exposed-form-video-list-page .views-exposed-widgets , #views-exposed-form-news-page .views-exposed-widgets{
   margin-bottom: 10px;
 }
 #views-exposed-form-photo-album-list-page .views-exposed-form .views-exposed-widget, #views-exposed-form-media-page .views-exposed-form .views-exposed-widget, #views-exposed-form-video-list-page .views-exposed-form .views-exposed-widget {
