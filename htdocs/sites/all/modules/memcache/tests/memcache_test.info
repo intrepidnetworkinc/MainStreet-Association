@@ -4,9 +4,9 @@ package = Testing
 core = 7.x
 hidden = TRUE
 
-; Information added by Drupal.org packaging script on 2014-03-10
-version = "7.x-1.1-beta5"
+; Information added by Drupal.org packaging script on 2014-11-01
+version = "7.x-1.3"
 core = "7.x"
 project = "memcache"
-datestamp = "1394488706"
+datestamp = "1414805630"
 

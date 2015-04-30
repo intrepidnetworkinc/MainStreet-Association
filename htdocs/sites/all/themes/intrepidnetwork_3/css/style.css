@@ -403,11 +403,22 @@ body.page-user-edit form#user-profile-form fieldset.panel.panel-default.form-wra
 body.not-front #block-system-main.col-md-8 {
   min-height: 400px;
 }
-
 body.logged-in #mediaBrowser {
   height: 910px;
 }
-
+body.page-media-browser {
+  overflow-y: scroll;
+}
+body.node-type-agenda a.pdf-reader-download-link {
+  display: none;
+}
+.header-offset {
+  padding-top: 180px;
+}
+#block-block-25 > div > div {
+  margin-top: 5px;
+  margin-left: -1px;
+}
 @media (min-width:1200px){
 .navbar .container {
   max-width: inherit;
@@ -522,6 +533,13 @@ li.sharethis {
   float: left;
   padding: 0 5px 10px 15px;
 }
+#views-exposed-form-media-page .views-exposed-widget.views-widget-filter-type {
+  padding: 0 5px 10px 15px;
+}
+iframe#pdf_reader {
+  width: 100%;
+  height: 950px;
+}
 }
 @media (max-width:991px) {
 .more-link a {
@@ -604,6 +622,9 @@ iframe.media-youtube-player, iframe.google-map {
 }
 body.page-node-367 h1.page-header { /* Street Fair Title */
   font-size:42px;
+}
+#views-exposed-form-media-page .views-exposed-widget.views-widget-filter-type {
+  padding: 0 5px 10px 15px;
 }
 }
 /* Small devices Tablets (>= 768px) */

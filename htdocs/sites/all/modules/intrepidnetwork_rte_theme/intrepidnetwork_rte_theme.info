@@ -1,0 +1,6 @@
+name = Intrepid Network RTE theme
+description = Settings override for WYSIWYG CKEditor theme
+package = User interface
+dependencies[] = libraries (2.x)
+dependencies[] = wysiwyg
+core = 7.x

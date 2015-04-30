@@ -171,3 +171,21 @@
 .calendar-calendar .week-view #single-day-container, .calendar-calendar .day-view #single-day-container {
   display: table;
 }
+@media (max-width:480px) {
+.page-calendar .view .date-nav-wrapper .date-heading h3 {
+  font-size: 1.5em;
+}
+.page-calendar .nav-tabs {
+  border-width: 0px;
+  background-color: #D42D2D;
+  position: relative;
+  left: 0px;
+  right: auto;
+  z-index: 2;
+  min-height: 28px;
+}
+.page-calendar .view .date-nav-wrapper .date-prev {
+  right: auto;
+  left: 10px;
+}
+}

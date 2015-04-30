@@ -34,11 +34,9 @@
 h1, h2, h3 {
   line-height: .75;
 }
-
 section .node .field-name-body .field-item h1, h2, h3 {
   line-height: 1.1;
 }
-
 p {
   text-align: justify;
 }
